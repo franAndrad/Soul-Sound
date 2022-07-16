@@ -1,1 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
 
+
+.letraError{
+    font-family: 'Permanent Marker', cursive;
+}
+
+body{
+    background-image:
+    url('https://i.pinimg.com/originals/90/55/ef/9055efe3ff748587548137dd1e181035.gif');
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat:no-repeat;
+    /* background-attachment: fixed ; */
+    /* background-position: absolute;  */
+}
+
+.imgError{
+    max-width: 40%;
+    height: auto;
+}
