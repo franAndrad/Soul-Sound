@@ -1,10 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Questrial&display=swap');
 
+
+body{
+    background-image:
+    url('https://cdn.discordapp.com/attachments/997135561598967988/997607617667014776/11062b_acb673f54af94ae4bcc070e65631e9bf_mv2.jpg');
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 h1{
     font-family: 'Oswald', sans-serif;
+    max-width:350px;
+    color:  #896797;
+	
 }
 
 p{
     font-family: 'Questrial', sans-serif;
+}
+
+button{
+    background-color: #896797;
+    font-family: 'Questrial', sans-serif;
+}
+
+
+
+.cardBg{
+    background-color: rgb(40, 40, 40);
+   
+}
+
+
+.gradiente {
+    background: rgb(0,0,0);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.437), rgb(0, 0, 0));
 }
 
