@@ -8,3 +8,8 @@ p{
     font-family: 'Questrial', sans-serif;
 }
 
+body {
+    background-image: url("../img/11062b_604ded692d29445eafb087501345229d_mv2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
