@@ -7,6 +7,7 @@ body{
     width: 100%;
     background-size: cover;
     background-attachment: fixed;
+    background-position: center center;
 }
 
 h1{
@@ -16,7 +17,7 @@ h1{
 	
 }
 
-p{
+p,h4{
     font-family: 'Questrial', sans-serif;
 }
 
@@ -24,14 +25,6 @@ button{
     background-color: #896797;
     font-family: 'Questrial', sans-serif;
 }
-
-
-
-.cardBg{
-    background-color: rgb(40, 40, 40);
-   
-}
-
 
 .gradiente {
     background: rgb(0,0,0);
