@@ -9,7 +9,7 @@ function abrirMenu(){
     let header = document.getElementById('header');
     
     if(icono.className === 'fa-solid fa-bars text-white'){
-        paginas.className = 'container-menu d-lg-block';
+        paginas.className = 'container-menu d-xl-block';
         buscador.className = 'd-flex ps-lg-5 container-search';
         icono.className = 'fa-solid fa-xmark text-white';
         header.className = 'bg-dark'

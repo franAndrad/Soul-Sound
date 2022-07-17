@@ -15,7 +15,6 @@ p{
 }
 
 
-
 /* Backgorund */
 body{
     background-image: url(../img/background);
@@ -140,7 +139,6 @@ body{
 }
 
 /* Contenedor gradiente */
-
 .gradient{
     background: rgba(0,0,0,0);
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
