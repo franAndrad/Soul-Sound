@@ -145,3 +145,8 @@ body {
     }
 }
 
+.fotoNosotros {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+}
