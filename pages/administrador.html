@@ -14,9 +14,46 @@
     <title>Administrador</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <header id="header">
+            <nav class="navbar justify-content-around mx-5 py-4" id="nav"> 
+                <div class="container-toggle">
+                    <a class="navbar-logo text-bold fs-3 fw-bold text-center" href="">Epic Sound</a>
+                    <button class="btn fs-3 nav-btn" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
+                </div>
+                <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
+                    <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
+                    <button class="nav-search-icon" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="container-menu d-xl-block d-none" id="paginas">
+                    <ul class="d-flex navbar-menu my-auto mx-auto">
+                        <li><a class="navbar-link active" href="../index.html">Inicio</a></li>
+                        <li><a class="navbar-link" href="nosotros.html">Acerca de</a></li>
+                        <li><a class="navbar-link" href="#">Iniciar Sesion</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </header>
     <main></main>
-    <footer></footer>
+    <footer class="bg-black">
+        <div class="container py-3">
+            <p class="text-secondary">Epic Sound es el primer servicio con sonido en Alta Fidelidad, además de playlists elaboradas por expertos y contenido original convirtiéndose en la plataforma de referencia de música y cultura.</p>
+            <hr class="text-white">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="ms-lg-0 ms-auto me-auto mt-3 text-center">
+                    <p class="text-white">&copy;2022 Epic Sound</p>
+                </div>
+                    <a class="navbar-link" href="#">Politica de Privacidad</a>
+                    <a class="navbar-link" href="#">Terminos y condiciones</a>
+                    <a class="navbar-link" href="#">Contacto</a>
+                <div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="../js/app.js"></script>
