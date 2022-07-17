@@ -46,6 +46,10 @@ button{
     position: fixed;
 }
 
+.iconosFooter{
+    color: white;
+}
+
 /* Buscador del navbar */
 .nav-search{
     background: white;
@@ -110,6 +114,18 @@ button{
 }
 .active{
     color: #896797;
+}
+
+@media only screen and (max-width:768px){
+    .iconosRedes{
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width:769px){
+    .iconosFooter{
+        display: none !important;
+    }
 }
 
 @media all and (max-width:1199px){
