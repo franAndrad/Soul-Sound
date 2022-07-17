@@ -116,13 +116,13 @@ button{
     color: #896797;
 }
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width:767px){
     .iconosRedes{
         display: none !important;
     }
 }
 
-@media only screen and (min-width:769px){
+@media only screen and (min-width:768px){
     .iconosFooter{
         display: none !important;
     }
