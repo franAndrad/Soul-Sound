@@ -17,17 +17,16 @@
     <header></header>
     <main>
         <h1>HOLA MUNDO</h1>
-        <a class="btn btn-primary" data-bs-toggle="modal" href="#ModalToggle" role="button">Open first modal</a>
     </main>
     <footer></footer>
 
-    <!-- Login & Registro Modal -->
+    <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
     <div class="modal fade" id="ModalToggle" aria-hidden="true" aria-labelledby="ModalToggleLabel" tabindex="-1">
 
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header" >
-                    <h5 class="modal-title" id="ModalToggleLabel">Registro</h5>
+                    <h5 class="modal-title" id="ModalToggleLabel">Inicio de Sesion</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -42,12 +41,16 @@
                             <label for="loginPassword" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="loginPassword">
                         </div>
+
+                        <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
                     </form>
                 </div>
 
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#ModalToggle2" data-bs-toggle="modal">Open second modal</button>
+                <div>
+                    <div class="form-text text-center mb-1">No eres un usuario?</div>
                 </div>
+
+                <button class="btn btn-outline-primary" data-bs-target="#ModalToggle2" data-bs-toggle="modal">Registrarse</button>               
             </div>
         </div>
     </div>
@@ -55,16 +58,37 @@
     <div class="modal fade" id="ModalToggle2" aria-hidden="true" aria-labelledby="ModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ModalToggleLabel2">Modal 2</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Hide this modal and show the first with the button below.
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-target="#ModalToggle" data-bs-toggle="modal">Back to first</button>
-            </div>
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalToggleLabel2">Registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="registroNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="registroNombre" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="registroEmail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="registroEmail" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="registroPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="registroPassword">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </form>
+                </div>
+
+                <div>
+                    <div class="form-text text-center mb-1">Ya eres miembro?</div>
+                </div>
+                <button class="btn btn-outline-primary" data-bs-target="#ModalToggle" data-bs-toggle="modal">Inicio de Sesion</button>
             </div>
         </div>
     </div>
