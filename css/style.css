@@ -1,10 +1,139 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Questrial&display=swap');
 
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
 h1{
     font-family: 'Oswald', sans-serif;
 }
 
 p{
     font-family: 'Questrial', sans-serif;
+}
+
+body{
+    background-image: url(../img/background);
+    background-position: center;
+    background-position: top;
+    background-size: cover;
+}
+
+/* Buscador del navbar */
+
+.nav-search{
+    background: white;
+    color: black;
+    border-bottom: 2px solid #896797;
+    border-top: 2px solid #896797;
+    border-right: 0 solid #896797;
+    border-left: 2px solid #896797;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-left: 20px;
+    width: 400px;
+    height: 35px;
+}
+.nav-search:focus{
+    outline: none;
+}
+.nav-search-icon{
+    background: white;
+    color: black;
+    border-bottom: 2px solid #896797;
+    border-top: 2px solid #896797;
+    border-right: 2px solid #896797;
+    border-left: 0px solid #fff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-right: 8px;
+    height: 35px;
+}
+.navbar-logo{
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    text-decoration: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 60px;    
+}
+.navbar-logo:hover{
+    color: #896797;
+}
+.navbar-menu{
+    list-style: none;
+    padding-left: 0px;
+}
+.navbar-link{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.navbar-link:hover{
+    color: #896797;
+}
+.nav-btn{
+    color: white;
+    visibility: collapse;
+    border: none;
+}
+.active{
+    color: #896797;
+}
+
+@media all and (max-width:1199px){
+
+    nav{
+        display: block;
+    }
+    .nav-btn{
+        visibility: visible;
+        font-size: 25px;
+        color: white;
+    }
+    .nav-btn:hover{
+        color: #896797;
+        border: none;
+    }
+    .nav-search{
+        width: 400px;
+    }
+    .container-toggle{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar-logo{
+        padding-left: 0px;
+    }
+    .container-search{
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    .container-menu{
+        margin-top: 20px;
+        height: 100px;
+    }
+    .navbar-menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+    }
+}
+
+@media all and (max-width:700px){
+    .nav-search{
+        width: 250px;
+    }
 }
 
