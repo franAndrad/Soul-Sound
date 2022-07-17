@@ -10,18 +10,32 @@ h1,h2{
     font-family: 'Oswald', sans-serif;
 }
 
+h2{
+    font-family: 'Oswald', sans-serif;
+    color:  #896797;
+}
+
 p{
     font-family: 'Questrial', sans-serif;
 }
 
 
 /* Backgorund */
-body{
+.bodyIndex{
     background-image: url(../img/background);
     background-position: center;
     background-position: top;
     background-size: cover;
 }
+.bodyNosotros {
+    background-image: url("../img/11062b_604ded692d29445eafb087501345229d_mv2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* .gradiente {
+    background: rgb(0,0,0);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.437), rgb(0, 0, 0));
+} */
 
 /* Buscador del navbar */
 .nav-search{
