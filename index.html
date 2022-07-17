@@ -16,7 +16,7 @@
 <body>
     <header></header>
     <main>
-        
+        <button class="btn btn-outline-primary" data-bs-target="#ModalToggle" data-bs-toggle="modal">NEURON ACTIVATION</button>   
     </main>
     <footer></footer>
 
@@ -24,8 +24,8 @@
     <div class="modal fade" id="ModalToggle" aria-hidden="true" aria-labelledby="ModalToggleLabel" tabindex="-1">
 
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" >
+            <div class="modal-content text-light transparent-background">
+                <div class="modal-header border-transparent" >
                     <h5 class="modal-title" id="ModalToggleLabel">Inicio de Sesion</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -42,24 +42,25 @@
                             <input type="password" class="form-control" id="loginPassword">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                        <button type="submit" class="btn btn-purple">Iniciar Sesion</button>
                     </form>
                 </div>
 
                 <div>
-                    <div class="form-text text-center mb-1">No eres un usuario?</div>
+                    <div class="form-text text-center mb-1 text-light">No eres un usuario?</div>
                 </div>
 
-                <button class="btn btn-outline-primary" data-bs-target="#ModalToggle2" data-bs-toggle="modal">Registrarse</button>               
+                <button class="btn btn-outline-purple" data-bs-target="#ModalToggle2" data-bs-toggle="modal">Registrarse</button>               
             </div>
         </div>
     </div>
 
     <div class="modal fade" id="ModalToggle2" aria-hidden="true" aria-labelledby="ModalToggleLabel2" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
 
-                <div class="modal-header">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content transparent-background text-light">
+
+                <div class="modal-header border-transparent">
                     <h5 class="modal-title" id="ModalToggleLabel2">Registro</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -81,14 +82,14 @@
                             <input type="password" class="form-control" id="registroPassword">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                        <button type="submit" class="btn btn-purple">Registrarse</button>
                     </form>
                 </div>
 
                 <div>
-                    <div class="form-text text-center mb-1">Ya eres miembro?</div>
+                    <div class="form-text text-center mb-1 text-light">Ya eres miembro?</div>
                 </div>
-                <button class="btn btn-outline-primary" data-bs-target="#ModalToggle" data-bs-toggle="modal">Inicio de Sesion</button>
+                <button class="btn btn-outline-purple" data-bs-target="#ModalToggle" data-bs-toggle="modal">Inicio de Sesion</button>
             </div>
         </div>
     </div>

@@ -8,3 +8,51 @@ p{
     font-family: 'Questrial', sans-serif;
 }
 
+/* Hace transparente el modal de login y registro */
+.transparent-background{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Quita la linea blanca del header del modal */
+.border-transparent{
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.text-purple{
+    color: #896797;
+}
+
+/* Boton de color morado (Normal) */
+.btn-purple{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #896797;
+    --bs-btn-border-color: #896797;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #664c70;
+    --bs-btn-hover-border-color: #523e5a;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #523e5a;
+    --bs-btn-active-border-color: #5d4766;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #896797;
+    --bs-btn-disabled-border-color: #896797;
+}
+
+/* Boton de color morado (Outline)*/
+.btn-outline-purple{
+    --bs-btn-color: #896797;
+    --bs-btn-border-color: #896797;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #896797;
+    --bs-btn-hover-border-color: #896797;
+    --bs-btn-focus-shadow-rgb: 13,110,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #896797;
+    --bs-btn-active-border-color: #896797;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #896797;
+    --bs-btn-disabled-bg: transparent;
+    --bs-gradient: none;
+}
