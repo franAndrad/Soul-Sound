@@ -6,27 +6,36 @@
     margin: 0px;
 }
 
-h1,h2{
-    font-family: 'Oswald', sans-serif;
-}
-
 h2{
     font-family: 'Oswald', sans-serif;
     color:  #896797;
 }
 
-p{
+h1{
+    font-family: 'Oswald', sans-serif;
+    max-width:350px;
+    color:  #896797;	
+}
+
+p,h4{
+    font-family: 'Questrial', sans-serif;
+}
+
+button{
+    background-color: #896797;
     font-family: 'Questrial', sans-serif;
 }
 
 
 /* Backgorund */
 .bodyIndex{
-    background-image: url(../img/background);
-    background-position: center;
-    background-position: top;
+    background-image: url("../img/background");
+    width: 100%;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
+
 .bodyNosotros {
     background-image: url("../img/11062b_604ded692d29445eafb087501345229d_mv2.jpg");
     background-size: cover;
@@ -153,7 +162,7 @@ p{
 }
 
 /* Contenedor gradiente */
-.gradient{
+/* .gradient{
     background: rgba(0,0,0,0);
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(38%, rgba(0,0,0,0.86)), color-stop(55%, rgba(0,0,0,0.9)), color-stop(78%, rgba(0,0,0,0.95)), color-stop(90%, rgba(0,0,0,0.98)), color-stop(100%, rgba(0,0,0,1)));
@@ -162,6 +171,22 @@ p{
     background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+} */
+
+
+.card{
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    cursor: pointer;
 }
 
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.gradiente {
+    background: rgb(0,0,0);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.437), rgb(0, 0, 0));
+}
 
