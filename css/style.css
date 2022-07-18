@@ -124,6 +124,47 @@ button{
     color: #896797;
 }
 
+/* Contenedor gradiente */
+/* .gradient{
+    background: rgba(0,0,0,0);
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(38%, rgba(0,0,0,0.86)), color-stop(55%, rgba(0,0,0,0.9)), color-stop(78%, rgba(0,0,0,0.95)), color-stop(90%, rgba(0,0,0,0.98)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+} */
+
+
+.card{
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.gradiente {
+    background: rgb(0,0,0);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.437), rgb(0, 0, 0));
+}
+
+.fotoNosotros {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    align-items: center;
+}
+
+.textoNosotros{
+    width: 125px;
+    margin-top: 25px;
+}
+
 @media only screen and (max-width:767px){
     .iconosRedes{
         display: none !important;
@@ -177,45 +218,13 @@ button{
         justify-content: space-between;
         height: 100px;
     }
+    .textoNosotros{
+        width: 100%;
+    }
 }
 
 @media all and (max-width:700px){
     .nav-search{
         width: 250px;
     }
-}
-
-/* Contenedor gradiente */
-/* .gradient{
-    background: rgba(0,0,0,0);
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(38%, rgba(0,0,0,0.86)), color-stop(55%, rgba(0,0,0,0.9)), color-stop(78%, rgba(0,0,0,0.95)), color-stop(90%, rgba(0,0,0,0.98)), color-stop(100%, rgba(0,0,0,1)));
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
-} */
-
-
-.card{
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-    cursor: pointer;
-}
-
-.card:hover{
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-}
-
-.gradiente {
-    background: rgb(0,0,0);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.437), rgb(0, 0, 0));
-}
-
-.fotoNosotros {
-    width: 125px;
-    height: 125px;
-    object-fit: cover;
 }
