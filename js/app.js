@@ -16,8 +16,8 @@ botonInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonRegistro.addEventListener('click',()=>{abrirRegistro()});
 window.addEventListener('resize', ()=>{actualizarPagina()});
 
+// Funcionalidad del navbar responsive
 function actualizarPagina(){
-    // console.log('hola');
     paginas.className = 'container-menu d-xl-block d-none';
     buscador.className = 'ps-lg-5 container-search d-xl-flex d-none';
     icono.className = 'fa-solid fa-bars text-white';

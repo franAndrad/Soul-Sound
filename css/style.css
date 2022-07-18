@@ -26,6 +26,10 @@ button{
     font-family: 'Questrial', sans-serif;
 }
 
+.contenedor{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
 
 /* Backgorund */
 .bodyIndex{
@@ -144,7 +148,6 @@ button{
 
 
 /* Pagina Nosotros */
-
 .fotoNosotros {
     width: 125px;
     height: 125px;
@@ -159,7 +162,6 @@ button{
 
 
 /* Modales */
-
 /* color gris en el fondo del modal de login y registro */
 .gray-background{
     background: rgba(55, 55, 55, 0.856);
@@ -209,9 +211,7 @@ button{
     --bs-gradient: none;
 }
 
-
 /* Tamaños Responsive */
-
 @media only screen and (max-width:767px){
     .iconosRedes{
         display: none !important;
@@ -220,15 +220,12 @@ button{
         width: 40%;
     }
 }
-
 @media only screen and (min-width:768px){
     .iconosFooter{
         display: none !important;
     }
 }
-
 @media all and (max-width:1199px){
-
     nav{
         display: block;
     }
@@ -271,11 +268,8 @@ button{
         width: 100%;
     }
 }
-
 @media all and (max-width:700px){
     .nav-search{
         width: 250px;
     }
 }
-
-    
