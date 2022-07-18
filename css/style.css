@@ -162,9 +162,9 @@ button{
 
 /* Modales */
 
-/* Hace transparente el modal de login y registro */
-.transparent-background{
-    background: rgba(0, 0, 0, 0.5);
+/* color gris en el fondo del modal de login y registro */
+.gray-background{
+    background: rgba(55, 55, 55, 0.856);
 }
 
 /* Quita la linea blanca del header del modal */
