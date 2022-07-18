@@ -40,26 +40,72 @@
         </nav>
     </header>
     <main>
-
+        <button class="btn btn-outline-primary" data-bs-target="#ModalToggle" data-bs-toggle="modal">NEURON ACTIVATION</button>   
     </main>
-    <footer class="bg-black">
-        <div class="container py-3">
-            <p class="text-secondary">Epic Sound es el primer servicio con sonido en Alta Fidelidad, además de playlists elaboradas por expertos y contenido original convirtiéndose en la plataforma de referencia de música y cultura.</p>
-            <hr class="text-white">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <div class="ms-lg-0 ms-auto me-auto mt-3 text-center">
-                    <p class="text-white">&copy;2022 Epic Sound</p>
+    <footer></footer>
+
+    <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
+    <div class="modal fade" id="ModalToggle" aria-hidden="true" aria-labelledby="ModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-light transparent-background">
+                <div class="modal-header border-transparent" >
+                    <h5 class="modal-title" id="ModalToggleLabel">Inicio de Sesion</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                    <a class="navbar-link" href="#">Politica de Privacidad</a>
-                    <a class="navbar-link" href="#">Terminos y condiciones</a>
-                    <a class="navbar-link" href="#">Contacto</a>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="LoginEmail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="LoginEmail" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="loginPassword">
+                        </div>
+                        <button type="submit" class="btn btn-purple">Iniciar Sesion</button>
+                    </form>
+                </div>
                 <div>
+                    <div class="form-text text-center mb-1 text-light">No eres un usuario?</div>
                 </div>
+                <button class="btn btn-outline-purple" data-bs-target="#ModalToggle2" data-bs-toggle="modal">Registrarse<button>               
             </div>
         </div>
-    </footer>
-    
-    <!-- JavaScript Bootstrap -->
+    </div>
+
+    <div class="modal fade" id="ModalToggle2" aria-hidden="true" aria-labelledby="ModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content transparent-background text-light">
+                <div class="modal-header border-transparent">
+                    <h5 class="modal-title" id="ModalToggleLabel2">Registro</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="registroNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="registroNombre" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registroEmail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="registroEmail" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registroPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="registroPassword">
+                        </div>
+                        <button type="submit" class="btn btn-purple">Registrarse</button>
+                    </form>
+                </div>
+                <div>
+                    <div class="form-text text-center mb-1 text-light">Ya eres miembro?</div>
+                </div>
+                <button class="btn btn-outline-purple" data-bs-target="#ModalToggle" data-bs-toggle="modal">Inicio de Sesion</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- JavaScript -->
     <script src="js/app.js" type="module"></script>
