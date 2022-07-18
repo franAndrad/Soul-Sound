@@ -50,6 +50,8 @@ button{
 
 .iconosRedes{
     position: fixed;
+    top: 200px;
+    
 }
 
 .iconosFooter{
@@ -113,7 +115,7 @@ button{
     border: none;
 }
 .navbar-link:hover{
-    color: #896797;
+    color: #e39dff;
 }
 .nav-btn{
     color: white;
