@@ -108,6 +108,8 @@ button{
     text-decoration: none;
     margin-left: 10px;
     margin-right: 10px;
+    background: none;
+    border: none;
 }
 .navbar-link:hover{
     color: #896797;
