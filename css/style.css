@@ -10,7 +10,7 @@ p{
 
 /* Hace transparente el modal de login y registro */
 .gray-background{
-    background: rgb(55, 55, 55);
+    background: rgba(55, 55, 55, 0.856);
 }
 
 /* Quita la linea blanca del header del modal */
