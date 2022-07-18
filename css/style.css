@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Questrial&display=swap');
 
-h1{
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+h1,h2{
     font-family: 'Oswald', sans-serif;
 }
 
@@ -139,3 +145,8 @@ body {
     }
 }
 
+.fotoNosotros {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+}
