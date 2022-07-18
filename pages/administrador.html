@@ -8,36 +8,79 @@
     <meta name="keywords" content="muisca,generos,sonido,calidad">
     <meta name="author" content="Francisco Andrade, Daniela Cardozo, Mauro Nicolas Garcia, Juan Menichetti, German von Scheidt">
     
-    <!-- CSS only -->
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/db30d1a3bd.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
     <link rel="stylesheet" href="../css/style.css">
     <title>Administrador</title>
 </head>
-<body>
-    <header>
-        <header id="header">
-            <nav class="navbar justify-content-around mx-5 py-4" id="nav"> 
-                <div class="container-toggle">
-                    <a class="navbar-logo text-bold fs-3 fw-bold text-center" href="">Epic Sound</a>
-                    <button class="btn fs-3 nav-btn" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
-                </div>
-                <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
-                    <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
-                    <button class="nav-search-icon" type="submit">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
-                <div class="container-menu d-xl-block d-none" id="paginas">
-                    <ul class="d-flex navbar-menu my-auto mx-auto">
-                        <li><a class="navbar-link active" href="../index.html">Inicio</a></li>
-                        <li><a class="navbar-link" href="nosotros.html">Acerca de</a></li>
-                        <li><button class="navbar-link" id="nav-inicioSesion">Iniciar Sesion</button></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+<body class="bodyIndex">
+    <header id="header">
+        <nav class="navbar justify-content-around mx-5 py-4" id="nav"> 
+            <div class="container-toggle">
+                <a class="navbar-logo text-bold fs-3 fw-bold text-center" href="">Epic Sound</a>
+                <button class="btn fs-3 nav-btn" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
+            </div>
+            <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
+                <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
+                <button class="nav-search-icon" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="container-menu d-xl-block d-none" id="paginas">
+                <ul class="d-flex navbar-menu my-auto mx-auto">
+                    <li><a class="navbar-link" href="../index.html">Inicio</a></li>
+                    <li><a class="navbar-link" href="nosotros.html">Acerca de</a></li>
+                    <li><button class="navbar-link" id="nav-inicioSesion">Iniciar Sesion</button></li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <main></main>
+    <main>
+        <section class="container-fluid gradiente mt-5">
+            <h2 class="display-3 p-5 text-center">Administrador</h2>
+            <section class="container d-flex">
+                <h4 class="text-light mt-5 mb-3">Administrador de canciones</h4>
+                <button class="rounded text-center py-2 px-5 mb-5 text-light fw-semibold mt-5 ms-auto">Agregar +</button>
+            </section>
+            <section class="container">
+                <article class="table-responsive d-block">
+                    <table class="table text-light">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Album</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Género</th>
+                            <th scope="col">Editar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Drake</td>
+                            <td>Finesse</td>
+                            <td>Scorpion</td>
+                            <td>3:02</td>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-light"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger"><i class="bi bi-x-square-fill"></i></button>
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                </article>
+            </section>
+        </section>
+    </main>
     <footer class="bg-black">
         <div class="container py-3">
             <p class="text-secondary">Epic Sound es el primer servicio con sonido en Alta Fidelidad, además de playlists elaboradas por expertos y contenido original convirtiéndose en la plataforma de referencia de música y cultura.</p>
