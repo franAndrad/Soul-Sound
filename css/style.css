@@ -124,18 +124,7 @@ button{
     color: #896797;
 }
 
-/* Contenedor gradiente */
-/* .gradient{
-    background: rgba(0,0,0,0);
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(38%, rgba(0,0,0,0.86)), color-stop(55%, rgba(0,0,0,0.9)), color-stop(78%, rgba(0,0,0,0.95)), color-stop(90%, rgba(0,0,0,0.98)), color-stop(100%, rgba(0,0,0,1)));
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.86) 38%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.95) 78%, rgba(0,0,0,0.98) 90%, rgba(0,0,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
-} */
-
+/* Inicio Session*/
 
 .card{
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
@@ -153,6 +142,9 @@ button{
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.437), rgb(0, 0, 0));
 }
 
+
+/* Pagina Nosotros */
+
 .fotoNosotros {
     width: 125px;
     height: 125px;
@@ -164,6 +156,61 @@ button{
     width: 125px;
     margin-top: 25px;
 }
+
+
+/* Modales */
+
+/* Hace transparente el modal de login y registro */
+.transparent-background{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Quita la linea blanca del header del modal */
+.border-transparent{
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.text-purple{
+    color: #896797;
+}
+
+/* Boton de color morado (Normal) */
+.btn-purple{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #896797;
+    --bs-btn-border-color: #896797;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #664c70;
+    --bs-btn-hover-border-color: #523e5a;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #523e5a;
+    --bs-btn-active-border-color: #5d4766;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #896797;
+    --bs-btn-disabled-border-color: #896797;
+}
+
+/* Boton de color morado (Outline)*/
+.btn-outline-purple{
+    --bs-btn-color: #896797;
+    --bs-btn-border-color: #896797;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #896797;
+    --bs-btn-hover-border-color: #896797;
+    --bs-btn-focus-shadow-rgb: 13,110,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #896797;
+    --bs-btn-active-border-color: #896797;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #896797;
+    --bs-btn-disabled-bg: transparent;
+    --bs-gradient: none;
+}
+
+
+/* Tamaños Responsive */
 
 @media only screen and (max-width:767px){
     .iconosRedes{
@@ -228,3 +275,5 @@ button{
         width: 250px;
     }
 }
+
+    
