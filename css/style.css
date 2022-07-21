@@ -219,10 +219,21 @@ button{
     .card{
         width: 40%;
     }
+    h1{
+        font-family: 'Oswald', sans-serif;
+        max-width:1800px; 
+        color:  #896797;   
+    }
+
 }
-@media only screen and (min-width:768px){
+@media only screen and (min-width:768px) and (max-width:991px){
     .iconosFooter{
         display: none !important;
+    }
+    h1{
+        font-family: 'Oswald', sans-serif;
+        max-width:1800px; 
+        color:  #896797;   
     }
 }
 @media all and (max-width:1199px){
