@@ -284,3 +284,27 @@ button{
         width: 250px;
     }
 }
+
+    
+/* pagina de detalle */ 
+
+#tarjetaDetalle{
+    background: linear-gradient(180deg, #291712 0%, #130A08 100%);
+    border-radius: 5px;
+    
+}
+
+#textoDetalle{
+    text-align: justify;
+    padding: 25px;
+}
+
+#iconosDetalle{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 200px;
+    
+    
+}
+
+
