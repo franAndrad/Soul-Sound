@@ -1,4 +1,5 @@
 import { cantidadCaracteres, validarEmail } from "./validaciones.js";
+import {Usuario} from "./loginRegistro.js";
 
 let botonToggle = document.querySelector("#toggle");
 let botonNavInicioSesion = document.querySelector("#nav-inicioSesion");
@@ -8,6 +9,8 @@ let paginas = document.getElementById('paginas');
 let buscador = document.getElementById('buscador');
 let icono = document.getElementById('icono');
 let header = document.getElementById('header');
+let formularioRegistro = document.getElementById("formUsuario");
+let formularioLogin = document.getElementById("formLogin");
 
 const modalSesion = new bootstrap.Modal(document.querySelector('#modalSesion'));
 const modalRegistro = new bootstrap.Modal(document.querySelector('#modalRegistro'));
@@ -25,11 +28,68 @@ let registroNombre = document.getElementById("registroNombre");
 let registroEmail = document.getElementById("registroEmail");
 let registroPassword = document.getElementById("registroPassword");
 
+
 loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
 loginPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,loginPassword)});
 registroNombre.addEventListener("blur", ()=>{cantidadCaracteres(1,30,registroNombre)});
 registroEmail.addEventListener("blur", ()=>{validarEmail(registroEmail)});
 registroPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,registroPassword)});
+formularioRegistro.addEventListener("submit", crearUsuario);
+formularioLogin.addEventListener("submit", login);
+
+// si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
+let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
+
+// Funcionalidad del registro
+function crearUsuario(e){
+    e.preventDefault();
+    console.log('desde la funcion crearUsuario');
+    let nuevoUsuario = new Usuario(registroNombre.value, registroEmail.value, registroPassword.value);
+    console.log(nuevoUsuario);
+    listaUsuario.push(nuevoUsuario);
+    // limpiar el formulario
+    limpiarFormulario();
+    // guardar la lista en el localStorage
+    guardarListaUsuario();
+    // cerramos el modal del registro
+    modalRegistro.hide()
+    Swal.fire("Usuario creado", "El usuario se creo exitosamente", "success");
+
+}
+
+// limpiar el formulario
+function limpiarFormulario(){
+    formularioRegistro.reset();
+    formularioLogin.reset();
+}
+
+// guardamos la lista en el localStorage
+function guardarListaUsuario(){
+    localStorage.setItem("listaUsuarioKey", JSON.stringify(listaUsuario));
+}
+
+// funcionalidad del login
+function login(e){
+    e.preventDefault();
+    if(loginEmail.value === 'administrador@gmail.com' && loginPassword.value === '1234560' ){
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Bienvenido Administrador.',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        modalSesion.hide();
+        limpiarFormulario();
+        window.open("../pages/administrador.html", "_self");
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Ups...',
+            text: 'Usuario no valido.'
+          })
+    }
+}
 
 // Funcionalidad del navbar responsive
 function actualizarPagina(){

@@ -16,6 +16,7 @@
     <script src="https://kit.fontawesome.com/db30d1a3bd.js" crossorigin="anonymous"></script>
     <!-- Css -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Epic Sound</title>
 </head>
 <body class="bodyIndex">
@@ -247,7 +248,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="formLogin">
                         <div class="mb-3">
                             <label for="loginEmail" class="form-label">Correo</label>
                             <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
@@ -275,7 +276,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="formUsuario">
                         <div class="mb-3">
                             <label for="registroNombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="registroNombre" aria-describedby="namelHelp">
