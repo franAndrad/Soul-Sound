@@ -1,3 +1,5 @@
+import { cantidadCaracteres, validarEmail } from "./validaciones.js";
+
 let botonToggle = document.querySelector("#toggle");
 let botonNavInicioSesion = document.querySelector("#nav-inicioSesion");
 let botonInicioSesion = document.querySelector("#inicioSesion");
@@ -15,6 +17,19 @@ botonNavInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonRegistro.addEventListener('click',()=>{abrirRegistro()});
 window.addEventListener('resize', ()=>{actualizarPagina()});
+
+// Validaciones
+let loginEmail = document.getElementById("loginEmail");
+let loginPassword = document.getElementById("loginPassword");
+let registroNombre = document.getElementById("registroNombre");
+let registroEmail = document.getElementById("registroEmail");
+let registroPassword = document.getElementById("registroPassword");
+
+loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
+loginPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,loginPassword)});
+registroNombre.addEventListener("blur", ()=>{cantidadCaracteres(1,30,registroNombre)});
+registroEmail.addEventListener("blur", ()=>{validarEmail(registroEmail)});
+registroPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,registroPassword)});
 
 // Funcionalidad del navbar responsive
 function actualizarPagina(){
