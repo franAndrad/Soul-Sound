@@ -81,7 +81,9 @@ function login(e){
           })
         modalSesion.hide();
         limpiarFormulario();
-        window.open("../pages/administrador.html", "_self");
+        setInterval(()=>{
+            window.open("../pages/administrador.html", "_self");
+        }, 1000)
     }else{
         Swal.fire({
             icon: 'error',
