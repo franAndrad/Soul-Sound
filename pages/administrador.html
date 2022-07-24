@@ -45,7 +45,7 @@
             <h2 class="display-3 p-5 text-center">Administrador</h2>
             <section class="container d-md-flex text-sm-center">
                 <h4 class="text-light mt-5 mb-3 ps-4">Administrador de canciones</h4>
-                <button class="rounded py-2 px-5 mb-5 text-light fw-semibold mt-5 ms-md-auto">Agregar +</button>
+                <button class="rounded py-2 px-5 mb-5 text-light fw-semibold mt-5 ms-md-auto" data-bs-toggle="modal" data-bs-target="#modalCancion">Agregar +</button>
             </section>
             <section class="container">
                 <article class="table-responsive d-block">
@@ -80,6 +80,49 @@
             </section>
         </section>
     </main>
+    <!-- Modal para Administrar canciones -->
+    <div class="modal fade" id="modalCancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-light gray-background">
+            <div class="modal-header border-transparent">
+              <h5 class="modal-title" id="exampleModalLabel">Administrar Canción</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formCancion">
+                <div class="mb-2">
+                    <label for="codigo" class="form-label">Código</label>
+                    <input type="text" class="form-control" id="codigo" disabled>
+                </div>
+                <div class="mb-2">
+                    <label for="autor" class="form-label">Autor</label>
+                    <input type="text" class="form-control" id="autor">
+                </div>
+                <div class="mb-2">
+                    <label for="titulo" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="titulo">
+                </div>
+                <div class="mb-2">
+                    <label for="album" class="form-label">Albúm</label>
+                    <input type="text" class="form-control" id="album">
+                </div>
+                <div class="mb-2">
+                    <label for="duracion" class="form-label">Duración</label>
+                    <input type="text" class="form-control" id="duracion">
+                </div>
+                <div class="mb-2">
+                    <label for="genero" class="form-label">Género</label>
+                    <input type="text" class="form-control" id="genero">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-purple">Guardar cambios</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <footer class="bg-black">
         <div class="container py-3">
             <p class="text-secondary">Epic Sound es el primer servicio con sonido en Alta Fidelidad, además de playlists elaboradas por expertos y contenido original convirtiéndose en la plataforma de referencia de música y cultura.</p>
