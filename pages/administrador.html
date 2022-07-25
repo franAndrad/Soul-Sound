@@ -23,7 +23,7 @@
         <nav class="navbar justify-content-around mx-5 py-4" id="nav"> 
             <div class="container-toggle">
                 <a class="navbar-logo text-bold fs-3 fw-bold text-center" href="">Epic Sound</a>
-                <button class="btn fs-3 nav-btn" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
+                <button class="btn fs-3 nav-btn d-xl-none d-block" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
             </div>
             <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
                 <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
@@ -33,8 +33,8 @@
             </div>
             <div class="container-menu d-xl-block d-none" id="paginas">
                 <ul class="d-flex navbar-menu my-auto mx-auto">
-                    <li><a class="navbar-link" href="../index.html">Inicio</a></li>
-                    <li><a class="navbar-link" href="nosotros.html">Acerca de</a></li>
+                    <li><a class="navbar-link active" href="index.html">Inicio</a></li>
+                    <li><a class="navbar-link" href="pages/nosotros.html">Acerca de</a></li>
                     <li><button class="navbar-link" id="nav-inicioSesion">Iniciar Sesion</button></li>
                 </ul>
             </div>
@@ -74,11 +74,12 @@
                           <tr>
                             <th scope="col">#</th>
                             <th scope="col">Usuarios</th>
-                            <th scope="col">Editar</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Eliminar</th>
                           </tr>
                         </thead>
-                        <tbody id="listaCanciones">
-                          <!-- lista de canciones con admin.js -->
+                        <tbody id="listaUsuario">
+                          <!-- lista de los usuarios con nav.js -->
                         </tbody>
                       </table>
                 </article>
@@ -145,19 +146,19 @@
         </div>
     </footer>
     
-    <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
-    <div class="modal fade" id="modalSesion" aria-hidden="true" aria-labelledby="modalSesionLabel1" tabindex="-1">
+     <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
+     <div class="modal fade" id="modalSesion" aria-hidden="true" aria-labelledby="modalSesionLabel1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-light transparent-background">
+            <div class="modal-content text-light gray-background">
                 <div class="modal-header border-transparent" >
                     <h5 class="modal-title" id="modalSesionLabel">Inicio de Sesion</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="formLogin">
                         <div class="mb-3">
-                            <label for="LoginEmail" class="form-label">Correo</label>
-                            <input type="email" class="form-control" id="LoginEmail" aria-describedby="emailHelp">
+                            <label for="loginEmail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="loginPassword" class="form-label">Contraseña</label>
@@ -167,25 +168,25 @@
                     </form>
                 </div>
                 <div>
-                        <div class="form-text text-center mb-1 text-light">No eres un usuario?</div>
+                    <div class="form-text text-center mb-1 text-light">No eres un usuario?</div>
                 </div>
                 <button class="btn btn-outline-purple" id="registrarse">Registrarse</button>               
             </div>
         </div>
     </div>
-    
+
     <div class="modal fade" id="modalRegistro" aria-hidden="true" aria-labelledby="modalRegistroLabel1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content transparent-background text-light">
+            <div class="modal-content gray-background text-light">
                 <div class="modal-header border-transparent">
                     <h5 class="modal-title" id="modalRegistroLabel1">Registro</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="formUsuario">
                         <div class="mb-3">
                             <label for="registroNombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="registroNombre" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="registroNombre" aria-describedby="namelHelp">
                         </div>
                         <div class="mb-3">
                             <label for="registroEmail" class="form-label">Correo</label>
@@ -210,5 +211,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     
     <script src="../js/admin.js" type="module"></script>
+    <script src="../js/loginRegistro.js" type="module"></script>
+    <script src="../js/tablaUsuario.js" type="module"></script>
 </body>
 </html>

@@ -37,8 +37,10 @@ registroPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,registroP
 formularioRegistro.addEventListener("submit", crearUsuario);
 formularioLogin.addEventListener("submit", login);
 
+
 // si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
-let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
+export let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
+
 
 // Funcionalidad del registro
 function crearUsuario(e){
@@ -54,7 +56,8 @@ function crearUsuario(e){
     // cerramos el modal del registro
     modalRegistro.hide()
     Swal.fire("Usuario creado", "El usuario se creo exitosamente", "success");
-
+    // crearFilaUsuario(nuevoUsuario);
+    
 }
 
 // limpiar el formulario
@@ -78,7 +81,7 @@ function login(e){
             title: 'Bienvenido Administrador.',
             showConfirmButton: false,
             timer: 1500
-          })
+        })
         modalSesion.hide();
         limpiarFormulario();
         setInterval(()=>{
@@ -89,9 +92,10 @@ function login(e){
             icon: 'error',
             title: 'Ups...',
             text: 'Usuario no valido.'
-          })
+        })
     }
 }
+
 
 // Funcionalidad del navbar responsive
 function actualizarPagina(){

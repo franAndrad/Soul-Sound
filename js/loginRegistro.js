@@ -1,5 +1,4 @@
 // script del login y registro
-
 export class Usuario{
     constructor(nombre, email, password){
         this.nombre = nombre;
@@ -25,3 +24,4 @@ export class Usuario{
         this.password = nuevoPassword;
     }
 }
+
