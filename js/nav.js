@@ -1,6 +1,7 @@
 import { cantidadCaracteres, validarEmail } from "./validaciones.js";
 import {Usuario} from "./loginRegistro.js";
 import { generarCodigo } from "./codigoUnico.js";
+import {listaUsuario} from "./tablaUsuario.js"
 
 let botonToggle = document.querySelector("#toggle");
 let botonNavInicioSesion = document.querySelector("#nav-inicioSesion");
@@ -42,7 +43,7 @@ formularioLogin.addEventListener("submit", login);
 
 
 // si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
-export let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
+// export let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
 
 
 // Funcionalidad del registro
@@ -69,7 +70,7 @@ function limpiarFormulario(){
 }
 
 // guardamos la lista en el localStorage
-function guardarListaUsuario(){
+export function guardarListaUsuario(){
     localStorage.setItem("listaUsuarioKey", JSON.stringify(listaUsuario));
 }
 

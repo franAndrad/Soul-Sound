@@ -1,6 +1,10 @@
 // funciones para crear la lista de usuarios en administrador
 import { Usuario } from "./loginRegistro.js";
-import {listaUsuario} from "./nav.js";
+import {guardarListaUsuario} from "./nav.js";
+
+// si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
+export let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
+
 
 // funciona para crear la tabla de usuarios
 cargaInicialUsuario();
@@ -42,8 +46,13 @@ window.borrarUsuario = function (codigo){
             if (result.isConfirmed) {
                 // borrar el usuario de listaUsario y tambien del localStorage
                 let listaUsuarioNueva = listaUsuario.filter((usuario)=> {return usuario.codigoUsuario != codigo})
+                listaUsuario = listaUsuarioNueva
+                guardarListaUsuario();
                 console.log(listaUsuarioNueva)
-                // actualizar la tabla
+                console.log(listaUsuario)
+                // borrar el usuario de la tabla
+                borrarTablaUsuario();
+                cargaInicialUsuario();
                 // mostrar el cartel de operacion exitosa
               Swal.fire(
                 'Usuario eliminado!',
@@ -52,4 +61,9 @@ window.borrarUsuario = function (codigo){
               )
             }
           })
+}
+
+function borrarTablaUsuario(){
+    let tbodyUsuario = document.getElementById('listaUsuario')
+    tbodyUsuario.innerHTML = '';
 }
