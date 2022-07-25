@@ -1,4 +1,5 @@
 import { Cancion } from "./cancionClass.js";
+import { generarCodigo } from "./codigoUnico.js";
 
 let nuevaCancion = new Cancion();
 console.log(nuevaCancion);
@@ -24,7 +25,7 @@ formulario.addEventListener('submit', guardarCancion);
 btnCrearCancion.addEventListener('click', ()=>{
     limpiarFormulario();
     modalAdminCancion.show();
-    
+    document.getElementById('codigo').value = generarCodigo();
 });
 
 cargaInicial();
@@ -38,7 +39,6 @@ function guardarCancion(e){
     }
 
 }
-
 
 function crearCancion(e){
     let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value, album.value, duracion.value, genero.value);
