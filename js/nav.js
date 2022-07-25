@@ -1,5 +1,6 @@
 import { cantidadCaracteres, validarEmail } from "./validaciones.js";
 import {Usuario} from "./loginRegistro.js";
+import { generarCodigo } from "./codigoUnico.js";
 
 let botonToggle = document.querySelector("#toggle");
 let botonNavInicioSesion = document.querySelector("#nav-inicioSesion");
@@ -12,6 +13,8 @@ let header = document.getElementById('header');
 let formularioRegistro = document.getElementById("formUsuario");
 let formularioLogin = document.getElementById("formLogin");
 
+
+
 const modalSesion = new bootstrap.Modal(document.querySelector('#modalSesion'));
 const modalRegistro = new bootstrap.Modal(document.querySelector('#modalRegistro'));
 
@@ -21,14 +24,14 @@ botonInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonRegistro.addEventListener('click',()=>{abrirRegistro()});
 window.addEventListener('resize', ()=>{actualizarPagina()});
 
-// Validaciones
 let loginEmail = document.getElementById("loginEmail");
 let loginPassword = document.getElementById("loginPassword");
 let registroNombre = document.getElementById("registroNombre");
 let registroEmail = document.getElementById("registroEmail");
 let registroPassword = document.getElementById("registroPassword");
+let registroCodigo = document.getElementById('registroCodigo')
 
-
+// Validaciones
 loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
 loginPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,loginPassword)});
 registroNombre.addEventListener("blur", ()=>{cantidadCaracteres(1,30,registroNombre)});
@@ -46,7 +49,7 @@ export let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) ||
 function crearUsuario(e){
     e.preventDefault();
     console.log('desde la funcion crearUsuario');
-    let nuevoUsuario = new Usuario(registroNombre.value, registroEmail.value, registroPassword.value);
+    let nuevoUsuario = new Usuario(registroCodigo.value, registroNombre.value, registroEmail.value, registroPassword.value);
     console.log(nuevoUsuario);
     listaUsuario.push(nuevoUsuario);
     // limpiar el formulario
@@ -56,6 +59,7 @@ function crearUsuario(e){
     // cerramos el modal del registro
     modalRegistro.hide()
     Swal.fire("Usuario creado", "El usuario se creo exitosamente", "success");
+   
     // crearFilaUsuario(nuevoUsuario);
     
 }
@@ -126,5 +130,6 @@ function abrirInicioSesion(){
 
 function abrirRegistro(){
     modalRegistro.show();
+    document.getElementById('registroCodigo').value = generarCodigo();
     modalSesion.hide();
 }

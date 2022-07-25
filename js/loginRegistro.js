@@ -1,9 +1,18 @@
 // script del login y registro
 export class Usuario{
-    constructor(nombre, email, password){
+    constructor(codigoUsuario, nombre, email, password){
+        this.codigoUsuario = codigoUsuario;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
+    }
+
+    get mostrarCodigoUsuario() {
+        return this.codigoUsuario;
+    }
+
+    set editarCodigoUsuario(codigoUsuario) {
+        this.codigoUsuario = codigoUsuario;
     }
     get tenerNombre(){
         return this.nombre;
