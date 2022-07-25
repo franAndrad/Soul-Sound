@@ -44,8 +44,8 @@ function crearCancion(e){
     let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value, album.value, duracion.value, genero.value);
     console.log(nuevaCancion);
     listaCanciones.push(nuevaCancion);
-    limpiarFormulario();
     guardarListaCanciones();
+    limpiarFormulario();
     modalAdminCancion.hide();
 
     crearFila(nuevaCancion);
