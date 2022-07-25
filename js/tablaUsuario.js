@@ -19,7 +19,7 @@ function crearFilaUsuario(itemUsuario){
         <td>${itemUsuario.nombre}</td>
         <td>${itemUsuario.email}</td>
         <td>
-            <button class="btn btn-danger m-1 opacity-75"><i class="bi bi-x-square-fill"></i></button>
+            <button class="btn btn-danger m-1 opacity-75" onclick='borrarUsuario("${itemUsuario.codigoUsuario}")'><i class="bi bi-x-square-fill"></i></button>
         </td>
     </tr>`
 }
@@ -41,6 +41,8 @@ window.borrarUsuario = function (codigo){
           }).then((result) => {
             if (result.isConfirmed) {
                 // borrar el usuario de listaUsario y tambien del localStorage
+                let listaUsuarioNueva = listaUsuario.filter((usuario)=> {return usuario.codigoUsuario != codigo})
+                console.log(listaUsuarioNueva)
                 // actualizar la tabla
                 // mostrar el cartel de operacion exitosa
               Swal.fire(
