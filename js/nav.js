@@ -59,8 +59,6 @@ function crearUsuario(e){
     // cerramos el modal del registro
     modalRegistro.hide()
     Swal.fire("Usuario creado", "El usuario se creo exitosamente", "success");
-   
-    // crearFilaUsuario(nuevoUsuario);
     
 }
 

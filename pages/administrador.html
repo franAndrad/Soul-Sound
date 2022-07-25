@@ -15,6 +15,7 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/db30d1a3bd.js" crossorigin="anonymous"></script>
     <!-- CSS only -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/style.css">
     <title>Administrador</title>
 </head>
@@ -184,6 +185,10 @@
                 </div>
                 <div class="modal-body">
                     <form id="formUsuario">
+                        <div class="mb-3">
+                            <label for="registroCodigo" class="form-label">Codigo</label>
+                            <input type="text" class="form-control" id="registroCodigo" aria-describedby="namelHelp">
+                        </div>
                         <div class="mb-3">
                             <label for="registroNombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="registroNombre" aria-describedby="namelHelp">
