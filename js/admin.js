@@ -81,3 +81,6 @@ function crearFila(itemCancion){
         </td>
     </tr>`
 }
+
+
+// funcion para borrar canciones
