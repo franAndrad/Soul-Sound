@@ -86,6 +86,7 @@ function crearFila(itemCancion){
 // funcion para borrar canciones
 
 window.borrarCancion = function (codigo){
+    
     console.log(codigo);
     // pregunto si quiero borrar al usuario
     Swal.fire({
