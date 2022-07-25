@@ -65,6 +65,7 @@ function crearUsuario(){
         title: "El usuario se creo exitosamente",
         showConfirmButton: false,
         timer: 1000
+        
       })
     
 }
