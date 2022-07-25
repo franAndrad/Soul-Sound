@@ -21,11 +21,17 @@ let listaCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || []
 //validaciones
 
 formulario.addEventListener('submit', guardarCancion);
+btnCrearCancion.addEventListener('click', ()=>{
+    limpiarFormulario();
+    modalAdminCancion.show();
+    
+});
+
+cargaInicial();
 
 function guardarCancion(e){
     e.preventDefault();
     if(cancionExistente){
-
         guardarEdicionCancion();
     } else {
         crearCancion();
@@ -35,8 +41,6 @@ function guardarCancion(e){
 
 
 function crearCancion(e){
-    e.preventDefault();
-    console.log('desde crear cancion');
     let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value, album.value, duracion.value, genero.value);
     console.log(nuevaCancion);
     listaCanciones.push(nuevaCancion);
