@@ -47,8 +47,8 @@ formularioLogin.addEventListener("submit", login);
 
 
 // Funcionalidad del registro
-function crearUsuario(e){
-    e.preventDefault();
+function crearUsuario(){
+    
     console.log('desde la funcion crearUsuario');
     let nuevoUsuario = new Usuario(registroCodigo.value, registroNombre.value, registroEmail.value, registroPassword.value);
     console.log(nuevoUsuario);
@@ -59,7 +59,13 @@ function crearUsuario(e){
     guardarListaUsuario();
     // cerramos el modal del registro
     modalRegistro.hide()
-    Swal.fire("Usuario creado", "El usuario se creo exitosamente", "success");
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: "El usuario se creo exitosamente",
+        showConfirmButton: false,
+        timer: 1000
+      })
     
 }
 
