@@ -1,6 +1,7 @@
 import { cantidadCaracteres, validarEmail } from "./validaciones.js";
 import {Usuario} from "./loginRegistro.js";
 import { generarCodigo } from "./codigoUnico.js";
+import { listaCanciones } from "./admin.js";
 // import {guardarListaUsuario} from "./tablaUsuario.js"
 
 let botonToggle = document.querySelector("#toggle");
@@ -138,4 +139,70 @@ function abrirRegistro(){
     modalRegistro.show();
     document.getElementById('registroCodigo').value = generarCodigo();
     modalSesion.hide();
+}
+
+let encontrados = document.getElementById("encontrados");
+let input = document.getElementById("input");
+let cards = document.getElementById("prueba");
+
+input.addEventListener('focus',()=>{filtrar();});
+input.addEventListener('keyup',()=>{filtrar();});
+buscador.addEventListener('click',()=>{buscar(input.value.toLowerCase())});
+
+function filtrar(){
+    // variables nescesarias 
+    let posicionBuscada;
+    let cont = 0;
+
+    // hacemos que aparesca vacia la lista
+    limpiarBuscador();    
+
+    // para cada objeto buscamos simulitudes con el input
+    
+    // cuenta de listaSeries poner la cancion
+    listaCanciones.forEach((cancion)=>{
+        posicionBuscada = cancion.titulo.search(input.value.toLowerCase());
+        if(posicionBuscada !== -1 && cont<8 && input.value!=''){
+            // buscados.push(cancion);
+            encontrados.className = 'ms-0 listaBusqueda bg-light rounded';
+            encontrados.innerHTML += `
+                <li class=' rounded selection'><a class='text-dark text-decoration-none py-2 px-2' onclick="ponerValue('${cancion.titulo}')">${cancion.titulo}<a/></li>
+            `; 
+            cont++;
+        }
+    });
+
+    window.ponerValue = (nombreCancion) =>{
+        input.value = nombreCancion;
+        buscar(nombreCancion);
+    }
+
+}
+
+function buscar(cancion){
+    let posicionBuscada;
+    // hacemos que aparesca vacia la lista
+    limpiarBuscador();
+    
+    // limpiamos cards
+    cards.innerHTML = '';
+    
+    // para cada objeto buscamos simulitudes con el input y colocamos la card creada
+    listaCanciones.forEach((canciones)=>{
+        posicionBuscada = canciones.titulo.search(cancion);
+        console.log(posicionBuscada);
+        if(posicionBuscada !== -1 && input.value!=''){
+            // buscados.push(cancion);
+            cards.className = 'ms-0 listaBusqueda bg-dark rounded';
+            cards.innerHTML += `
+                <li class=' rounded selection'><a class='text-light text-decoration-none py-2 px-2' onclick="ponerValue('${canciones.titulo}')">${canciones.titulo}<a/></li>
+            `; 
+        }
+    });
+}
+
+function limpiarBuscador(){
+    // hacemos que aparesca vacia la lista
+    encontrados.className = 'd-none';
+    encontrados.innerHTML = ``;
 }
