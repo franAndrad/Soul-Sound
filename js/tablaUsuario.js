@@ -1,9 +1,8 @@
 // funciones para crear la lista de usuarios en administrador
-import { Usuario } from "./loginRegistro.js";
-import {guardarListaUsuario} from "./nav.js";
+// import {guardarListaUsuario} from "./nav.js";
 
 // si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
-export let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
+let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
 
 
 // funciona para crear la tabla de usuarios
@@ -14,6 +13,10 @@ function cargaInicialUsuario(){
         listaUsuario.forEach((itemUsuario)=>{crearFilaUsuario(itemUsuario)})
     }
 }
+
+function guardarListaUsuario(){
+      localStorage.setItem("listaUsuarioKey", JSON.stringify(listaUsuario));
+  }
 
 function crearFilaUsuario(itemUsuario){
     let tablaUsuario = document.getElementById('listaUsuario');
