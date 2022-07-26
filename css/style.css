@@ -298,15 +298,15 @@ button{
     text-align: justify;
     padding: 25px;
     padding-bottom: 25px;
+    padding-top: 80px;
     color: white;
+    
 }
 
-#iconosDetalle{
+
+#reproductorMusica{
     display: flex;
-    justify-content: space-evenly;
-    padding-top: 70px;
-    
-    
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 80px;
 }
-
-
