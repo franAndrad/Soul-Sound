@@ -77,7 +77,49 @@ function crearFila(itemCancion){
         <td>${itemCancion.genero}</td>
         <td>
             <button class="btn btn-light m-1 opacity-75"><i class="bi bi-pencil-square"></i></button>
-            <button class="btn btn-danger m-1 opacity-75"><i class="bi bi-x-square-fill"></i></button>
+            <button class="btn btn-danger m-1 opacity-75" onclick="borrarCancion('${itemCancion.codigo}')"><i class="bi bi-x-square-fill"></i></button>
         </td>
     </tr>`
+}
+
+
+// funcion para borrar canciones
+
+window.borrarCancion = function (codigo){
+    
+    console.log(codigo);
+    // pregunto si quiero borrar al usuario
+    Swal.fire({
+            title: "Estas seguro de querer eliminar la cancion?",
+            text: "No puedes revertir este paso luego de aceptar.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, borrar.',
+            cancelButtonText: 'Cancelar.'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                // borrar el usuario de listaCanciones y tambien del localStorage
+                let listaCancionesNueva = listaCanciones.filter((cancion)=> {return cancion.codigo != codigo})
+                listaCanciones = listaCancionesNueva
+                guardarListaCanciones();
+                console.log(listaCancionesNueva)
+                console.log(listaCanciones)
+                // borrar la cancion de la tabla
+                borrarTablaCancion();
+                cargaInicial();
+                // mostrar el cartel de operacion exitosa
+              Swal.fire(
+                'Cancion eliminada!',
+                'La cancion fue eliminado exitosamente.',
+                'success'
+              )
+            }
+          })
+}
+
+function borrarTablaCancion(){
+    let tbodyCancion = document.getElementById('listaCanciones')
+    tbodyCancion.innerHTML = '';
 }
