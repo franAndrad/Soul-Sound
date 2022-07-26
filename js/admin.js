@@ -8,6 +8,8 @@ let codigo = document.getElementById('codigo');
 let autor = document.getElementById('autor');
 let titulo = document.getElementById('titulo');
 let album = document.getElementById('album');
+let cancion = document.getElementById('cancion');
+let portada = document.getElementById('portada');
 let duracion = document.getElementById('duracion');
 let genero = document.getElementById('genero');
 let formulario = document.querySelector('#formCancion');
@@ -73,6 +75,8 @@ function crearFila(itemCancion){
         <td>${itemCancion.autor}</td>
         <td>${itemCancion.titulo}</td>
         <td>${itemCancion.album}</td>
+        <td>${itemCancion.cancion}</td>
+        <td>${itemCancion.portada}</td>
         <td>${itemCancion.duracion}</td>
         <td>${itemCancion.genero}</td>
         <td>

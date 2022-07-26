@@ -13,6 +13,16 @@ let icono = document.getElementById('icono');
 let header = document.getElementById('header');
 let formularioRegistro = document.getElementById("formUsuario");
 let formularioLogin = document.getElementById("formLogin");
+let listadoCanciones = document.getElementById("listadoCanciones");
+let encontrados = document.getElementById("encontrados");
+let input = document.getElementById("input");
+let loginEmail = document.getElementById("loginEmail");
+let loginPassword = document.getElementById("loginPassword");
+let registroNombre = document.getElementById("registroNombre");
+let registroEmail = document.getElementById("registroEmail");
+let registroPassword = document.getElementById("registroPassword");
+let registroCodigo = document.getElementById('registroCodigo')
+
 
 
 
@@ -24,14 +34,9 @@ botonNavInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonRegistro.addEventListener('click',()=>{abrirRegistro()});
 window.addEventListener('resize', ()=>{actualizarPagina()});
-
-let loginEmail = document.getElementById("loginEmail");
-let loginPassword = document.getElementById("loginPassword");
-let registroNombre = document.getElementById("registroNombre");
-let registroEmail = document.getElementById("registroEmail");
-let registroPassword = document.getElementById("registroPassword");
-let registroCodigo = document.getElementById('registroCodigo')
-
+input.addEventListener('focus',()=>{filtrar();});
+input.addEventListener('keyup',()=>{filtrar();});
+input.addEventListener('keypress',(e)=>{filtrar(e);});
 // Validaciones
 loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
 loginPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,loginPassword)});
@@ -44,6 +49,7 @@ formularioLogin.addEventListener("submit", login);
 
 // si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
 let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
+let listaCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
 
 
 // Funcionalidad del registro
@@ -66,7 +72,7 @@ function crearUsuario(e){
         showConfirmButton: false,
         timer: 1000
         
-      })
+    })
     
 }
 
@@ -138,4 +144,74 @@ function abrirRegistro(){
     modalRegistro.show();
     document.getElementById('registroCodigo').value = generarCodigo();
     modalSesion.hide();
+}
+
+function filtrar(e){
+    // variables nescesarias 
+    let posicionBuscada;
+    let cont = 0;
+
+    // hacemos que aparesca vacia la lista
+    limpiarBuscador();    
+
+    // para cada objeto buscamos simulitudes con el input
+    
+    // cuenta de listaSeries poner la cancion
+    listaCanciones.forEach((cancion)=>{
+        posicionBuscada = cancion.titulo.search(input.value.toLowerCase());
+        if(posicionBuscada !== -1 && cont<8 && input.value!=''){
+            // buscados.push(cancion);
+            encontrados.className = 'ms-0 listaBusqueda bg-light rounded';
+            encontrados.innerHTML += `
+                <li class=' rounded selection'><a class='text-dark text-decoration-none py-2 px-2' onclick="ponerValue('${cancion.titulo}')">${cancion.titulo}<a/></li>
+            `; 
+            cont++;
+        }
+    });
+    
+    if(e.key === "Enter"){
+        buscar(input.value.toLowerCase());
+    }
+    
+    window.ponerValue = (nombreCancion) =>{
+        input.value = nombreCancion;
+        buscar(nombreCancion);
+    }
+}
+
+function buscar(cancion){
+    let posicionBuscada;
+    
+    // hacemos que aparesca vacia la lista
+    limpiarBuscador();
+    
+    // limpiamos cards
+    listadoCanciones.innerHTML = '';
+    
+    // para cada objeto buscamos simulitudes con el input y colocamos la card creada
+    listaCanciones.forEach((canciones)=>{
+        posicionBuscada = canciones.titulo.search(cancion);
+        if(posicionBuscada !== -1 && input.value!=''){
+            // buscados.push(cancion);
+            listadoCanciones.className = 'row justify-content-center';
+            listadoCanciones.innerHTML += `
+            <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
+                <a href="#">
+                    <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title text-light">${canciones.autor}</h5>
+                    <p class="card-text text-light">${canciones.titulo}</p>
+                </div>
+            </div>
+            `
+        }
+    });
+
+}
+
+function limpiarBuscador(){
+    // hacemos que aparesca vacia la lista
+    encontrados.className = 'd-none';
+    encontrados.innerHTML = ``;
 }

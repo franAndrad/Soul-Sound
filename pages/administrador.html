@@ -23,12 +23,12 @@
     <header id="header">
         <nav class="navbar justify-content-around mx-5 py-4" id="nav"> 
             <div class="container-toggle">
-                <a class="navbar-logo text-bold fs-3 fw-bold text-center" href="">Epic Sound</a>
+                <a class="navbar-logo text-bold fs-3 fw-bold text-center" href="../index.html">Epic Sound</a>
                 <button class="btn fs-3 nav-btn d-xl-none d-block" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
             </div>
             <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
                 <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
-                <button class="nav-search-icon" type="submit">
+                <button class="nav-search-icon" disabled type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
@@ -57,6 +57,8 @@
                             <th scope="col">Autor</th>
                             <th scope="col">Título</th>
                             <th scope="col">Album</th>
+                            <th scope="col">Canción</th>
+                            <th scope="col">Portada</th>
                             <th scope="col">Duración</th>
                             <th scope="col">Género</th>
                             <th scope="col">Editar</th>
@@ -100,7 +102,7 @@
               <form id="formCancion">
                 <div class="mb-2">
                     <label for="codigo" class="form-label">Código</label>
-                    <input type="text" class="form-control" id="codigo">
+                    <input type="text" class="form-control" id="codigo" disabled>
                 </div>
                 <div class="mb-2">
                     <label for="autor" class="form-label">Autor</label>
@@ -113,6 +115,14 @@
                 <div class="mb-2">
                     <label for="album" class="form-label">Albúm</label>
                     <input type="text" class="form-control" id="album">
+                </div>
+                <div class="mb-2">
+                    <label for="cancion" class="form-label">Canción</label>
+                    <input type="text" class="form-control" id="cancion">
+                </div>
+                <div class="mb-2">
+                    <label for="portada" class="form-label">Portada</label>
+                    <input type="text" class="form-control" id="portada">
                 </div>
                 <div class="mb-2">
                     <label for="duracion" class="form-label">Duración</label>
@@ -187,7 +197,7 @@
                     <form id="formUsuario">
                         <div class="mb-3">
                             <label for="registroCodigo" class="form-label">Codigo</label>
-                            <input type="text" class="form-control" id="registroCodigo" aria-describedby="namelHelp">
+                            <input type="text" class="form-control" id="registroCodigo" aria-describedby="namelHelp" disabled>
                         </div>
                         <div class="mb-3">
                             <label for="registroNombre" class="form-label">Nombre</label>
