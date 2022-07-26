@@ -47,8 +47,8 @@ let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
 
 
 // Funcionalidad del registro
-function crearUsuario(){
-    
+function crearUsuario(e){
+    e.preventDefault();
     console.log('desde la funcion crearUsuario');
     let nuevoUsuario = new Usuario(registroCodigo.value, registroNombre.value, registroEmail.value, registroPassword.value);
     console.log(nuevoUsuario);
