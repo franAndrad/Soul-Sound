@@ -8,6 +8,8 @@ let codigo = document.getElementById('codigo');
 let autor = document.getElementById('autor');
 let titulo = document.getElementById('titulo');
 let album = document.getElementById('album');
+let cancion = document.getElementById('cancion');
+let portada = document.getElementById('portada');
 let duracion = document.getElementById('duracion');
 let genero = document.getElementById('genero');
 let formulario = document.querySelector('#formCancion');
@@ -41,7 +43,7 @@ function guardarCancion(e){
 }
 
 function crearCancion(e){
-    let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value, album.value, duracion.value, genero.value);
+    let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value, album.value, cancion.value, portada.value, duracion.value, genero.value);
     console.log(nuevaCancion);
     listaCanciones.push(nuevaCancion);
     guardarListaCanciones();
@@ -73,6 +75,8 @@ function crearFila(itemCancion){
         <td>${itemCancion.autor}</td>
         <td>${itemCancion.titulo}</td>
         <td>${itemCancion.album}</td>
+        <td>${itemCancion.cancion}</td>
+        <td>${itemCancion.portada}</td>
         <td>${itemCancion.duracion}</td>
         <td>${itemCancion.genero}</td>
         <td>
