@@ -1,9 +1,11 @@
 export class Cancion {
-    constructor(codigo, autor, titulo, album, duracion, genero){
+    constructor(codigo, autor, titulo, album, cancion, portada, duracion, genero){
         this.codigo = codigo;
         this.autor= autor;
         this.titulo = titulo;
         this.album = album;
+        this.cancion = cancion;
+        this.portada = portada;
         this.duracion = duracion;
         this.genero = genero;
     }
@@ -38,6 +40,22 @@ export class Cancion {
 
     set editarAlbum(album) {
         this.album = album;
+    }
+
+    get mostrarCancion() {
+        return this.cancion;
+    }
+
+    set editarCancion(cancion) {
+        this.cancion = cancion;
+    }
+
+    get mostrarPortada() {
+        return this.portada;
+    }
+
+    set editarPortada(portada) {
+        this.portada = portada;
     }
 
     get mostrarDuracion() {
