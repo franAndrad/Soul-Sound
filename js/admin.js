@@ -17,7 +17,7 @@ console.log(modalAdminCancion);
 
 let cancionExistente = false;
 
-export let listaCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
+let listaCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
 
 //validaciones
 

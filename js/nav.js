@@ -1,7 +1,6 @@
 import { cantidadCaracteres, validarEmail } from "./validaciones.js";
 import {Usuario} from "./loginRegistro.js";
 import { generarCodigo } from "./codigoUnico.js";
-import { listaCanciones } from "./admin.js";
 // import {guardarListaUsuario} from "./tablaUsuario.js"
 
 let botonToggle = document.querySelector("#toggle");
@@ -14,6 +13,16 @@ let icono = document.getElementById('icono');
 let header = document.getElementById('header');
 let formularioRegistro = document.getElementById("formUsuario");
 let formularioLogin = document.getElementById("formLogin");
+let listadoCanciones = document.getElementById("listadoCanciones");
+let encontrados = document.getElementById("encontrados");
+let input = document.getElementById("input");
+let loginEmail = document.getElementById("loginEmail");
+let loginPassword = document.getElementById("loginPassword");
+let registroNombre = document.getElementById("registroNombre");
+let registroEmail = document.getElementById("registroEmail");
+let registroPassword = document.getElementById("registroPassword");
+let registroCodigo = document.getElementById('registroCodigo')
+
 
 
 
@@ -25,14 +34,9 @@ botonNavInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonRegistro.addEventListener('click',()=>{abrirRegistro()});
 window.addEventListener('resize', ()=>{actualizarPagina()});
-
-let loginEmail = document.getElementById("loginEmail");
-let loginPassword = document.getElementById("loginPassword");
-let registroNombre = document.getElementById("registroNombre");
-let registroEmail = document.getElementById("registroEmail");
-let registroPassword = document.getElementById("registroPassword");
-let registroCodigo = document.getElementById('registroCodigo')
-
+input.addEventListener('focus',()=>{filtrar();});
+input.addEventListener('keyup',()=>{filtrar();});
+buscador.addEventListener('click',()=>{buscar(input.value)});
 // Validaciones
 loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
 loginPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,loginPassword)});
@@ -45,6 +49,7 @@ formularioLogin.addEventListener("submit", login);
 
 // si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
 let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
+let listaCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
 
 
 // Funcionalidad del registro
@@ -67,7 +72,7 @@ function crearUsuario(){
         showConfirmButton: false,
         timer: 1000
         
-      })
+    })
     
 }
 
@@ -141,14 +146,6 @@ function abrirRegistro(){
     modalSesion.hide();
 }
 
-let encontrados = document.getElementById("encontrados");
-let input = document.getElementById("input");
-let cards = document.getElementById("prueba");
-
-input.addEventListener('focus',()=>{filtrar();});
-input.addEventListener('keyup',()=>{filtrar();});
-buscador.addEventListener('click',()=>{buscar(input.value.toLowerCase())});
-
 function filtrar(){
     // variables nescesarias 
     let posicionBuscada;
@@ -171,12 +168,10 @@ function filtrar(){
             cont++;
         }
     });
-
     window.ponerValue = (nombreCancion) =>{
         input.value = nombreCancion;
         buscar(nombreCancion);
     }
-
 }
 
 function buscar(cancion){
@@ -185,18 +180,25 @@ function buscar(cancion){
     limpiarBuscador();
     
     // limpiamos cards
-    cards.innerHTML = '';
+    listadoCanciones.innerHTML = '';
     
     // para cada objeto buscamos simulitudes con el input y colocamos la card creada
     listaCanciones.forEach((canciones)=>{
         posicionBuscada = canciones.titulo.search(cancion);
-        console.log(posicionBuscada);
         if(posicionBuscada !== -1 && input.value!=''){
             // buscados.push(cancion);
-            cards.className = 'ms-0 listaBusqueda bg-dark rounded';
-            cards.innerHTML += `
-                <li class=' rounded selection'><a class='text-light text-decoration-none py-2 px-2' onclick="ponerValue('${canciones.titulo}')">${canciones.titulo}<a/></li>
-            `; 
+            listadoCanciones.className = 'row justify-content-center';
+            listadoCanciones.innerHTML += `
+                <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
+                <a href="#">
+                    <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title text-light">${canciones.autor}</h5>
+                    <p class="card-text text-light">${canciones.titulo}</p>
+                </div>
+            </div>
+            `
         }
     });
 }

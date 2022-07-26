@@ -27,10 +27,12 @@
                 <button class="btn fs-3 nav-btn d-xl-none d-block" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
             </div>
             <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
-                <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
+                <input class="nav-search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" maxlength="50" id="input"/>
                 <button class="nav-search-icon" type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
+                <ul class="ms-0 listaBusqueda bg-light rounded d-none" id="encontrados">
+                </ul>
             </div>
             <div class="container-menu d-xl-block d-none" id="paginas">
                 <ul class="d-flex navbar-menu my-auto mx-auto">
@@ -69,7 +71,7 @@
             <section class="gradiente">
                 <section class="container my-5">
                     <h4 class="text-light p-4">Canciones</h4>
-                    <article class="row justify-content-center">
+                    <article class="row justify-content-center" id="listadoCanciones">
                         <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
                             <a href="#">
                                 <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
@@ -207,19 +209,19 @@
             <section>
                 <div class="container justify-content-center d-flex iconosFooter pt-4">
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-facebook"></i></a>
                     </div>
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-twitter"></i></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-twitter"></i></i></a>
                     </div>
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-instagram"></i></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-instagram"></i></i></a>
                     </div>
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-snapchat"></i></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-snapchat"></i></i></a>
                     </div>
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-youtube"></i></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-youtube"></i></i></a>
                     </div>
                 </div>
             </section>
