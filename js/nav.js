@@ -36,7 +36,7 @@ botonRegistro.addEventListener('click',()=>{abrirRegistro()});
 window.addEventListener('resize', ()=>{actualizarPagina()});
 input.addEventListener('focus',()=>{filtrar();});
 input.addEventListener('keyup',()=>{filtrar();});
-buscador.addEventListener('click',()=>{buscar(input.value)});
+input.addEventListener('keypress',(e)=>{filtrar(e);});
 // Validaciones
 loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
 loginPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,loginPassword)});
@@ -146,7 +146,7 @@ function abrirRegistro(){
     modalSesion.hide();
 }
 
-function filtrar(){
+function filtrar(e){
     // variables nescesarias 
     let posicionBuscada;
     let cont = 0;
@@ -168,6 +168,11 @@ function filtrar(){
             cont++;
         }
     });
+    
+    if(e.key === "Enter"){
+        buscar(input.value.toLowerCase());
+    }
+    
     window.ponerValue = (nombreCancion) =>{
         input.value = nombreCancion;
         buscar(nombreCancion);
@@ -176,6 +181,7 @@ function filtrar(){
 
 function buscar(cancion){
     let posicionBuscada;
+    
     // hacemos que aparesca vacia la lista
     limpiarBuscador();
     
@@ -189,7 +195,7 @@ function buscar(cancion){
             // buscados.push(cancion);
             listadoCanciones.className = 'row justify-content-center';
             listadoCanciones.innerHTML += `
-                <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
+            <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
                 <a href="#">
                     <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
                 </a>
@@ -201,6 +207,7 @@ function buscar(cancion){
             `
         }
     });
+
 }
 
 function limpiarBuscador(){
