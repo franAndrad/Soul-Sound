@@ -77,6 +77,7 @@ button{
     padding-left: 20px;
     width: 400px;
     height: 35px;
+    z-index: 1;
 }
 .nav-search:focus{
     outline: none;
@@ -94,6 +95,7 @@ button{
     border-bottom-left-radius: 0;
     padding-right: 8px;
     height: 35px;
+    z-index: 1;
 }
 .navbar-logo{
     font-family: 'Oswald', sans-serif;
@@ -128,7 +130,26 @@ button{
 .active{
     color: #896797;
 }
-
+.listaBusqueda{
+    list-style: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.selection{
+    text-decoration: none;
+}
+.selection:hover{
+    background-color: rgb(234, 233, 233);   
+}
+#encontrados{
+    position: absolute;
+    top: 40px;
+    z-index: 0;
+    padding-top: 33px;
+    padding-bottom: 10px;
+    margin-left: auto ;
+    width: 425px;
+}
 /* Inicio Session*/
 .card{
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
@@ -282,7 +303,17 @@ button{
 @media all and (max-width:700px){
     .nav-search{
         width: 250px;
+        z-index: 1;
     }
+    .nav-search-icon{
+        z-index: 1;
+    }
+    #encontrados{
+        width: 275px;
+        z-index: 0;
+        top: 100px;
+    }
+
 }
 
     

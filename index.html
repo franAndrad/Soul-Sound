@@ -16,6 +16,7 @@
     <script src="https://kit.fontawesome.com/db30d1a3bd.js" crossorigin="anonymous"></script>
     <!-- Css -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Epic Sound</title>
 </head>
 <body class="bodyIndex">
@@ -26,10 +27,12 @@
                 <button class="btn fs-3 nav-btn d-xl-none d-block" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
             </div>
             <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
-                <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
-                <button class="nav-search-icon" type="submit">
+                <input class="nav-search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" maxlength="50" id="input"/>
+                <button class="nav-search-icon" disabled type="button">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
+                <ul class="ms-0 listaBusqueda bg-light rounded d-none" id="encontrados">
+                </ul>
             </div>
             <div class="container-menu d-xl-block d-none" id="paginas">
                 <ul class="d-flex navbar-menu my-auto mx-auto">
@@ -50,108 +53,31 @@
             </section>
             <section class="container-fluid d-flex align-items-end flex-column pe-5 iconosRedes">
                 <div class="mb-4">
-                    <a href="#" class="text-light fs-5"><i class="bi bi-facebook"></i></a>
+                    <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-facebook"></i></a>
                 </div>
                 <div class="mb-4">
-                    <a href="#" class="text-light fs-5"><i class="bi bi-twitter"></i></i></a>
+                    <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-twitter"></i></i></a>
                 </div>
                 <div class="mb-4">
-                    <a href="#" class="text-light fs-5"><i class="bi bi-instagram"></i></i></a>
+                    <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-instagram"></i></i></a>
                 </div>
                 <div class="mb-4">
-                    <a href="#" class="text-light fs-5"><i class="bi bi-snapchat"></i></i></a>
+                    <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-snapchat"></i></i></a>
                 </div>
                 <div class="mb-4">
-                    <a href="#" class="text-light fs-5"><i class="bi bi-youtube"></i></i></a>
+                    <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-youtube"></i></i></a>
                 </div>
             </section>
             <section class="gradiente">
                 <section class="container my-5">
+
                     <h4 class="text-light p-4">Canciones</h4>
-                    <article class="row justify-content-center">
-                        <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                            <a href="#">
-                                <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-light">KALEO</h5>
-                                <p class="card-text text-light">Way Down We Go.</p>
-                            </div>
-                        </div>
-                        <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                            <a href="#">
-                                <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-light">KALEO</h5>
-                                <p class="card-text text-light">Way Down We Go.</p>
-                            </div>
-                        </div>
-                        <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                            <a href="#">
-                                <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-light">KALEO</h5>
-                                <p class="card-text text-light">Way Down We Go.</p>
-                            </div>
-                        </div>
-                        <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                            <a href="#">
-                                <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-light">KALEO</h5>
-                                <p class="card-text text-light">Way Down We Go.</p>
-                            </div>
-                        </div>
-                        <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                            <a href="#">
-                                <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-light">KALEO</h5>
-                                <p class="card-text text-light">Way Down We Go.</p>
-                            </div>
-                        </div>
-                        <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                            <a href="#">
-                                <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-light">KALEO</h5>
-                                <p class="card-text text-light">Way Down We Go.</p>
-                            </div>
-                        </div>
-                        <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                            <a href="#">
-                                <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-light">KALEO</h5>
-                                <p class="card-text text-light">Way Down We Go.</p>
-                            </div>
-                        </div>
-                        <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                            <a href="#">
-                                <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-light">KALEO</h5>
-                                <p class="card-text text-light">Way Down We Go.</p>
-                            </div>
-                        </div>
-                        <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                            <a href="#">
-                                <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-light">KALEO</h5>
-                                <p class="card-text text-light">Way Down We Go.</p>
-                            </div>
-                        </div>
+                    <article class="row justify-content-center" id="listadoCanciones"> 
+                        
                     </article>
+
                 </section>
+
                 <section class="container">
                     <h4 class="text-light m-4">Generos</h4>
                     <article class="row justify-content-center">
@@ -206,19 +132,19 @@
             <section>
                 <div class="container justify-content-center d-flex iconosFooter pt-4">
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-facebook"></i></a>
                     </div>
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-twitter"></i></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-twitter"></i></i></a>
                     </div>
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-instagram"></i></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-instagram"></i></i></a>
                     </div>
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-snapchat"></i></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-snapchat"></i></i></a>
                     </div>
                     <div class="mb-4 px-4">
-                        <a href="#" class="text-light fs-5"><i class="bi bi-youtube"></i></i></a>
+                        <a href="pages/paginaError.html" class="text-light fs-5"><i class="bi bi-youtube"></i></i></a>
                     </div>
                 </div>
             </section>
@@ -229,9 +155,9 @@
                     <div class="ms-lg-0 ms-auto me-auto text-center">
                         <p class="text-white">&copy;2022 Epic Sound</p>
                     </div>
-                        <a class="navbar-link" href="#">Politica de Privacidad</a>
-                        <a class="navbar-link" href="#">Terminos y condiciones</a>
-                        <a class="navbar-link" href="#">Contacto</a>
+                        <a class="navbar-link" href="pages/paginaError.html">Politica de Privacidad</a>
+                        <a class="navbar-link" href="pages/paginaError.html">Terminos y condiciones</a>
+                        <a class="navbar-link" href="pages/paginaError.html">Contacto</a>
                     <div>
                     </div>
                 </div>
@@ -247,7 +173,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="formLogin">
                         <div class="mb-3">
                             <label for="loginEmail" class="form-label">Correo</label>
                             <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
@@ -275,7 +201,11 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="formUsuario">
+                        <div class="mb-3">
+                            <label for="registroCodigo" class="form-label">Codigo</label>
+                            <input type="text" class="form-control" id="registroCodigo" aria-describedby="namelHelp" disabled>
+                        </div>
                         <div class="mb-3">
                             <label for="registroNombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="registroNombre" aria-describedby="namelHelp">
@@ -298,7 +228,8 @@
             </div>
         </div>
     </div>
-
+    
+    
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- JavaScript -->
