@@ -8,6 +8,10 @@ let cancionBuscada = listaCanciones.find((cancion)=>{return cancion.codigo == ur
 
 let seccionDetalle = document.getElementById("seccionDetalle");
 
+let linkCompratir = cancionBuscada.cancion;
+let corteCodigo = linkCompratir.substring(31,53);
+let iframeLink = "https://open.spotify.com/embed/track/" + corteCodigo + "?utm_source=generator";
+
 seccionDetalle.innerHTML = `
 <div class="text-center card-body" id="tarjetaDetalle">
     <div class="row g-0 ">
@@ -26,6 +30,7 @@ seccionDetalle.innerHTML = `
             <p class="card-text"><small>${cancionBuscada.genero} <br/> ${cancionBuscada.duracion}</small></p>
 
             <div id="reproductorMusica">
+                <iframe style="border-radius:12px" src="${iframeLink}" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
         </div>
 
