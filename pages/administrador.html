@@ -8,36 +8,109 @@
     <meta name="keywords" content="muisca,generos,sonido,calidad">
     <meta name="author" content="Francisco Andrade, Daniela Cardozo, Mauro Nicolas Garcia, Juan Menichetti, German von Scheidt">
     
-    <!-- CSS only -->
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/db30d1a3bd.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
     <link rel="stylesheet" href="../css/style.css">
     <title>Administrador</title>
 </head>
-<body>
-    <header>
-        <header id="header">
-            <nav class="navbar justify-content-around mx-5 py-4" id="nav"> 
-                <div class="container-toggle">
-                    <a class="navbar-logo text-bold fs-3 fw-bold text-center" href="">Epic Sound</a>
-                    <button class="btn fs-3 nav-btn" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
-                </div>
-                <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
-                    <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
-                    <button class="nav-search-icon" type="submit">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
-                <div class="container-menu d-xl-block d-none" id="paginas">
-                    <ul class="d-flex navbar-menu my-auto mx-auto">
-                        <li><a class="navbar-link active" href="../index.html">Inicio</a></li>
-                        <li><a class="navbar-link" href="nosotros.html">Acerca de</a></li>
-                        <li><button class="navbar-link" id="nav-inicioSesion">Iniciar Sesion</button></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+<body class="bodyIndex">
+    <header id="header">
+        <nav class="navbar justify-content-around mx-5 py-4" id="nav"> 
+            <div class="container-toggle">
+                <a class="navbar-logo text-bold fs-3 fw-bold text-center" href="">Epic Sound</a>
+                <button class="btn fs-3 nav-btn" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
+            </div>
+            <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
+                <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
+                <button class="nav-search-icon" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="container-menu d-xl-block d-none" id="paginas">
+                <ul class="d-flex navbar-menu my-auto mx-auto">
+                    <li><a class="navbar-link" href="../index.html">Inicio</a></li>
+                    <li><a class="navbar-link" href="nosotros.html">Acerca de</a></li>
+                    <li><button class="navbar-link" id="nav-inicioSesion">Iniciar Sesion</button></li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <main></main>
+    <main>
+        <section class="container-fluid gradiente mt-5">
+            <h2 class="display-3 p-5 text-center">Administrador</h2>
+            <section class="container d-md-flex text-sm-center">
+                <h4 class="text-light mt-5 mb-3 ps-4">Administrador de canciones</h4>
+                <button class="rounded py-2 px-5 mb-5 text-light fw-semibold mt-5 ms-md-auto" id="btnCrearCancion">Agregar +</button>
+            </section>
+            <section class="container">
+                <article class="table-responsive d-block">
+                    <table class="table text-light">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Album</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Género</th>
+                            <th scope="col">Editar</th>
+                          </tr>
+                        </thead>
+                        <tbody id="listaCanciones">
+                          <!-- lista de canciones con admin.js -->
+                        </tbody>
+                      </table>
+                </article>
+            </section>
+        </section>
+    </main>
+    <!-- Modal para Administrar canciones -->
+    <div class="modal fade" id="modalCancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-light gray-background">
+            <div class="modal-header border-transparent">
+              <h5 class="modal-title" id="exampleModalLabel">Administrar Canción</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formCancion">
+                <div class="mb-2">
+                    <label for="codigo" class="form-label">Código</label>
+                    <input type="text" class="form-control" id="codigo">
+                </div>
+                <div class="mb-2">
+                    <label for="autor" class="form-label">Autor</label>
+                    <input type="text" class="form-control" id="autor">
+                </div>
+                <div class="mb-2">
+                    <label for="titulo" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="titulo">
+                </div>
+                <div class="mb-2">
+                    <label for="album" class="form-label">Albúm</label>
+                    <input type="text" class="form-control" id="album">
+                </div>
+                <div class="mb-2">
+                    <label for="duracion" class="form-label">Duración</label>
+                    <input type="text" class="form-control" id="duracion">
+                </div>
+                <div class="mb-2">
+                    <label for="genero" class="form-label">Género</label>
+                    <input type="text" class="form-control" id="genero">
+                </div>
+                <div class="m-3 text-end">
+                    <button type="submit" class="btn btn-purple">Agregar canción</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     <footer class="bg-black">
         <div class="container py-3">
             <p class="text-secondary">Epic Sound es el primer servicio con sonido en Alta Fidelidad, además de playlists elaboradas por expertos y contenido original convirtiéndose en la plataforma de referencia de música y cultura.</p>
@@ -118,7 +191,7 @@
     
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="../js/app.js"></script>
-    <script src="../js/nav.js" type="module"></script>
+    
+    <script src="../js/admin.js" type="module"></script>
 </body>
 </html>
