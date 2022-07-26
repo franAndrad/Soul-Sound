@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="pagina de musica">
     <meta name="keywords" content="muisca,generos,sonido,calidad">
-    <meta name="author" content="Francisco Andrade, Daniela Cardozo, Mauro Nicolas Garcia, Juan Menichetti, German von Scheidt">
-    
+    <meta name="author"
+        content="Francisco Andrade, Daniela Cardozo, Mauro Nicolas Garcia, Juan Menichetti, German von Scheidt">
+
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <title>Detalles</title>
+
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
-<body>
-    <header>
+<body class="bodyIndex">
+    
         <header id="header">
             <nav class="navbar justify-content-around mx-5 py-4" id="nav"> 
                 <div class="container-toggle">
@@ -36,11 +42,128 @@
                 </div>
             </nav>
         </header>
-    </header>
-    <main></main>
+    <main>
+
+
+        <!-- Pagina de Detalle de Cancion -->
+
+        <section class="gradiente">
+            <article class="container py-5">
+                <div class="text-center card-body" id="tarjetaDetalle">
+                    <div class="row g-0 ">
+                        <div class="col-md-4">
+                            <img src="https://i.scdn.co/image/ab67616d0000b2739eadeac31b5bf45cd406e40c" class="img-fluid rounded-start" alt="Cancion Ejemplo">
+                            <p>
+                                <div class="text-light" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#multiCollapseExample1" aria-expanded="false"
+                                    aria-controls="multiCollapseExample1">Letra</div>
+                            </p>
+                        </div>
+
+
+
+                        <div class="textoDetalle col-md-8">
+                            <div class="text-end">
+                                <p><b>ID: </b> <span class="codigo">123456789</span>
+                            </div>
+
+
+                            <h5 class="card-title">KALEO</h5>
+                            <p class="card-text">Way Down We Go.</p>
+                            <p class="card-text"><small>Indie <br /> 3min 33s</small></p>
+
+                                
+
+                            <div id="reproductorMusica">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <div class="text-center">
+                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            <div class="text-light">
+                                Oh, father tell me, do we get what we deserve? <br />
+                                Oh we get what we deserve <br />
+
+                                And way down we go, go, go, go, go <br />
+                                Way down we go, go, go, go, go<br />
+                                So way down we go, go, go, go<br />
+                                Way down we go<br />
+
+                                Oh, you let your feet run wild<br />
+                                Time has come as we all<br />
+                                Oh, go down<br />
+                                Yeah but for the fall oh, my<br />
+                                Do you dare to look him right in the eyes?<br />
+                                Yeah<br />
+
+                                Because they will run you down<br />
+                                Down till the dark<br />
+                                Yes and they will run you down<br />
+                                Down till you fall<br />
+                                And they will run you down<br />
+                                Down till you go<br />
+                                Yeah so you can't crawl no more<br />
+
+                                And way down we go, go, go, go, go<br />
+                                Way down we go, go, go, go, go<br />
+                                So way down we go, go, go, go<br />
+                                Because they will run you down<br />
+                                Down till you fall<br />
+                                Oh, way down we go<br />
+                                (bis)<br />
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                </div>
+
+                </div>
+            </article>
+
+
+            <br>
+            <section class="text-center container-fluid p-5 row">
+                <div class="col-lg-5 col-md-6 col-12">
+                    <h4 class="text-light m-5">Small title</h4>
+                    <p class="text-light m-5">Añade una nueva dimension a tu musica</p>
+                </div>
+                <div class="col-lg-5 col-md-6 col-12 d-flex justify-content-center">
+                    <svg preserveAspectRatio="xMidYMid meet" data-bbox="10.135 38.381 179.775 123.241"
+                        viewBox="10.135 38.381 179.775 123.241" height="200" width="200"
+                        xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true">
+                        <g>
+                            <path
+                                d="M91.654 161.622h-.019c-1.764-.013-3.143-1.29-3.282-3.041l-7.974-98.998-10.863 86.407c-.209 1.682-1.587 2.899-3.288 2.899h-.013c-1.707-.009-3.086-1.24-3.275-2.931l-7.569-66.755-6.108 53.435c-.19 1.701-1.518 2.909-3.231 2.937-1.84.069-3.086-1.133-3.332-2.82l-5.925-40.203-6.513 25a3.173 3.173 0 0 1-2.915 2.388c-1.22.107-2.649-.745-3.149-2.051l-5.274-13.913-5.704 12.017a1.626 1.626 0 0 1-2.144.792 1.605 1.605 0 0 1-.79-2.142l5.558-12.023c.563-1.221 1.77-1.962 3.13-1.921a3.292 3.292 0 0 1 2.972 2.136l5.28 13.916 6.26-25.003c.398-1.549 1.973-2.533 3.377-2.489a3.279 3.279 0 0 1 3.111 2.821l5.925 40.206 6.102-53.441c.183-1.701 1.568-2.937 3.288-2.94 1.72 0 3.105 1.234 3.294 2.934l7.569 66.755 10.863-86.41c.215-1.716 1.726-2.975 3.358-2.896 1.733.035 3.092 1.316 3.231 3.038l7.974 98.998 10.889-116.943c.158-1.745 1.543-3 3.294-3h.044c1.77.022 3.149 1.319 3.263 3.089l7.525 115.732 9.131-91.635c.171-1.773 1.676-2.912 3.383-2.985 1.789.047 3.143 1.372 3.225 3.155l3.478 75.16 8.264-61.357c.221-1.678 1.593-2.874 3.282-2.874h.089c1.726.044 3.079 1.322 3.219 3.041l4.293 52.548 7.265-40.228a3.276 3.276 0 0 1 3.187-2.729c1.556-.095 2.953 1.025 3.307 2.584l5.874 24.246c.006-.006.006-.009.013-.016.019-.025.076-.088.139-.161.765-1.641 5.824-12.531 6.07-13.096.398-1.01 1.568-1.742 2.789-1.742h.063c1.113.022 2.023.663 2.384 1.672.133.404 3.716 11.629 3.819 11.982.103.353.103 1.504-.987 1.881-1.317.455-1.929-.372-2.098-.903-.169-.531-2.466-7.755-3.427-10.752-.835 1.902-3.49 7.619-5.773 12.522a1.571 1.571 0 0 1-.386.524c-.474.603-1.334 1.688-2.725 1.596-1.005-.044-1.916-.663-2.706-1.842a1.588 1.588 0 0 1-.228-.521l-5.975-24.659-7.272 40.209c-.291 1.659-1.777 2.824-3.415 2.729a3.271 3.271 0 0 1-3.143-3.035l-4.293-52.548-8.271 61.357c-.234 1.738-1.638 3.044-3.427 2.871-1.758-.076-3.086-1.401-3.168-3.149l-3.478-75.163-9.124 91.635c-.171 1.735-1.549 2.981-3.294 2.981h-.057c-1.77-.028-3.143-1.331-3.25-3.092l-7.525-115.729-10.889 116.94c-.16 1.741-1.551 3.003-3.302 3.003z"
+                                fill=" #896797" data-color="1"></path>
+                        </g>
+                    </svg>
+                    <svg preserveAspectRatio="xMidYMid meet" data-bbox="10.135 38.381 179.775 123.241"
+                        viewBox="10.135 38.381 179.775 123.241" height="200" width="200"
+                        xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true">
+                        <g>
+                            <path
+                                d="M91.654 161.622h-.019c-1.764-.013-3.143-1.29-3.282-3.041l-7.974-98.998-10.863 86.407c-.209 1.682-1.587 2.899-3.288 2.899h-.013c-1.707-.009-3.086-1.24-3.275-2.931l-7.569-66.755-6.108 53.435c-.19 1.701-1.518 2.909-3.231 2.937-1.84.069-3.086-1.133-3.332-2.82l-5.925-40.203-6.513 25a3.173 3.173 0 0 1-2.915 2.388c-1.22.107-2.649-.745-3.149-2.051l-5.274-13.913-5.704 12.017a1.626 1.626 0 0 1-2.144.792 1.605 1.605 0 0 1-.79-2.142l5.558-12.023c.563-1.221 1.77-1.962 3.13-1.921a3.292 3.292 0 0 1 2.972 2.136l5.28 13.916 6.26-25.003c.398-1.549 1.973-2.533 3.377-2.489a3.279 3.279 0 0 1 3.111 2.821l5.925 40.206 6.102-53.441c.183-1.701 1.568-2.937 3.288-2.94 1.72 0 3.105 1.234 3.294 2.934l7.569 66.755 10.863-86.41c.215-1.716 1.726-2.975 3.358-2.896 1.733.035 3.092 1.316 3.231 3.038l7.974 98.998 10.889-116.943c.158-1.745 1.543-3 3.294-3h.044c1.77.022 3.149 1.319 3.263 3.089l7.525 115.732 9.131-91.635c.171-1.773 1.676-2.912 3.383-2.985 1.789.047 3.143 1.372 3.225 3.155l3.478 75.16 8.264-61.357c.221-1.678 1.593-2.874 3.282-2.874h.089c1.726.044 3.079 1.322 3.219 3.041l4.293 52.548 7.265-40.228a3.276 3.276 0 0 1 3.187-2.729c1.556-.095 2.953 1.025 3.307 2.584l5.874 24.246c.006-.006.006-.009.013-.016.019-.025.076-.088.139-.161.765-1.641 5.824-12.531 6.07-13.096.398-1.01 1.568-1.742 2.789-1.742h.063c1.113.022 2.023.663 2.384 1.672.133.404 3.716 11.629 3.819 11.982.103.353.103 1.504-.987 1.881-1.317.455-1.929-.372-2.098-.903-.169-.531-2.466-7.755-3.427-10.752-.835 1.902-3.49 7.619-5.773 12.522a1.571 1.571 0 0 1-.386.524c-.474.603-1.334 1.688-2.725 1.596-1.005-.044-1.916-.663-2.706-1.842a1.588 1.588 0 0 1-.228-.521l-5.975-24.659-7.272 40.209c-.291 1.659-1.777 2.824-3.415 2.729a3.271 3.271 0 0 1-3.143-3.035l-4.293-52.548-8.271 61.357c-.234 1.738-1.638 3.044-3.427 2.871-1.758-.076-3.086-1.401-3.168-3.149l-3.478-75.163-9.124 91.635c-.171 1.735-1.549 2.981-3.294 2.981h-.057c-1.77-.028-3.143-1.331-3.25-3.092l-7.525-115.729-10.889 116.94c-.16 1.741-1.551 3.003-3.302 3.003z"
+                                fill=" #896797" data-color="1"></path>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+        </section>
+    </main>
     <footer class="bg-black">
         <div class="container py-3">
-            <p class="text-secondary">Epic Sound es el primer servicio con sonido en Alta Fidelidad, además de playlists elaboradas por expertos y contenido original convirtiéndose en la plataforma de referencia de música y cultura.</p>
+            <p class="text-secondary">Epic Sound es el primer servicio con sonido en Alta Fidelidad, además de playlists
+                elaboradas por expertos y contenido original convirtiéndose en la plataforma de referencia de música y
+                cultura.</p>
             <hr class="text-white">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
                 <div class="ms-lg-0 ms-auto me-auto mt-3 text-center">
@@ -54,11 +177,11 @@
             </div>
         </div>
     </footer>
-    
+   
     <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
     <div class="modal fade" id="modalSesion" aria-hidden="true" aria-labelledby="modalSesionLabel1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-light transparent-background">
+            <div class="modal-content text-light gray-background">
                 <div class="modal-header border-transparent" >
                     <h5 class="modal-title" id="modalSesionLabel">Inicio de Sesion</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -66,8 +189,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="LoginEmail" class="form-label">Correo</label>
-                            <input type="email" class="form-control" id="LoginEmail" aria-describedby="emailHelp">
+                            <label for="loginEmail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="loginPassword" class="form-label">Contraseña</label>
@@ -83,10 +206,10 @@
             </div>
         </div>
     </div>
-    
+
     <div class="modal fade" id="modalRegistro" aria-hidden="true" aria-labelledby="modalRegistroLabel1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content transparent-background text-light">
+            <div class="modal-content gray-background text-light">
                 <div class="modal-header border-transparent">
                     <h5 class="modal-title" id="modalRegistroLabel1">Registro</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -95,7 +218,7 @@
                     <form>
                         <div class="mb-3">
                             <label for="registroNombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="registroNombre" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="registroNombre" aria-describedby="namelHelp">
                         </div>
                         <div class="mb-3">
                             <label for="registroEmail" class="form-label">Correo</label>
@@ -108,17 +231,22 @@
                         <button type="submit" class="btn btn-purple">Registrarse</button>
                     </form>
                 </div>
-                    <div>
+                <div>
                     <div class="form-text text-center mb-1 text-light">Ya eres miembro?</div>
                 </div>
                 <button class="btn btn-outline-purple" id="inicioSesion">Inicio de Sesion</button>
             </div>
         </div>
-    </div>    
+    </div>
+
     
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
     <script src="../js/app.js"></script>
     <script src="../js/nav.js" type="module"></script>
+    <script src="../js/reproductor.js"></script>
 </body>
+
 </html>

@@ -315,3 +315,29 @@ button{
     }
 
 }
+
+    
+/* pagina de detalle */ 
+
+#tarjetaDetalle{
+    background: linear-gradient(180deg, #291712 0%, #130A08 100%);
+    border-radius: 5px;
+    
+}
+
+.textoDetalle{
+    text-align: justify;
+    padding: 25px;
+    padding-bottom: 25px;
+    padding-top: 80px;
+    color: white;
+    
+}
+
+
+#reproductorMusica{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 80px;
+}
