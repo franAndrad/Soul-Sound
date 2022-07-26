@@ -34,9 +34,9 @@ botonNavInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonRegistro.addEventListener('click',()=>{abrirRegistro()});
 window.addEventListener('resize', ()=>{actualizarPagina()});
-input.addEventListener('focus',()=>{filtrar();});
+// input.addEventListener('focus',()=>{filtrar();});
 input.addEventListener('keyup',()=>{filtrar();});
-input.addEventListener('keypress',(e)=>{filtrar(e);});
+input.addEventListener('keydown',(e)=>{filtrar(e);});
 // Validaciones
 loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
 loginPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,loginPassword)});
@@ -169,7 +169,7 @@ function filtrar(e){
         }
     });
     
-    if(e.key === "Enter"){
+    if(e.key  === "Enter"){
         buscar(input.value.toLowerCase());
     }
     
@@ -181,7 +181,7 @@ function filtrar(e){
 
 function buscar(cancion){
     let posicionBuscada;
-    
+
     // hacemos que aparesca vacia la lista
     limpiarBuscador();
     
@@ -207,7 +207,6 @@ function buscar(cancion){
             `
         }
     });
-
 }
 
 function limpiarBuscador(){
