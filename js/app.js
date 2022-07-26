@@ -18,7 +18,6 @@ function crearCard(cancion) {
                 <h5 class="card-title text-light">${cancion.autor}</h5>
                 <p class="card-text text-light">${cancion.titulo}</p>
             </div>
-
         </div>
     `
 }
