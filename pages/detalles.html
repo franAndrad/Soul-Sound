@@ -52,7 +52,7 @@
                 <div class="text-center card-body" id="tarjetaDetalle">
                     <div class="row g-0 ">
                         <div class="col-md-4">
-                            <img src="../img/CancionEjemplo.jpg" class="img-fluid rounded-start" alt="Cancion Ejemplo">
+                            <img src="https://i.scdn.co/image/ab67616d0000b2739eadeac31b5bf45cd406e40c" class="img-fluid rounded-start" alt="Cancion Ejemplo">
                             <p>
                                 <div class="text-light" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#multiCollapseExample1" aria-expanded="false"
@@ -73,16 +73,9 @@
                             <p class="card-text"><small>Indie <br /> 3min 33s</small></p>
 
                                 
-                                    <div class="text-light" id="iconosDetalle">
-                                        
-                                        <i class="bi bi-play-circle"></i>
-                                        <i class="bi bi-heart-fill"></i>
-                                        <i class="bi bi-three-dots"></i>
-                            </div>
 
-                            <div>
+                            <div id="reproductorMusica">
 
-                                <iframe src="https://open.spotify.com/embed/track/3HSGiM6yjNYctM8AqipOZp?utm_source=generator" width="100%" height="30%" frameborder="0" style="border-radius: 12px;"allowtransparency="true" allow="encrypted-media"></iframe>
                             </div>
                         </div>
 
@@ -184,10 +177,11 @@
             </div>
         </div>
     </footer>
+   
     <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
     <div class="modal fade" id="modalSesion" aria-hidden="true" aria-labelledby="modalSesionLabel1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-light transparent-background">
+            <div class="modal-content text-light gray-background">
                 <div class="modal-header border-transparent" >
                     <h5 class="modal-title" id="modalSesionLabel">Inicio de Sesion</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -195,8 +189,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="LoginEmail" class="form-label">Correo</label>
-                            <input type="email" class="form-control" id="LoginEmail" aria-describedby="emailHelp">
+                            <label for="loginEmail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="loginPassword" class="form-label">Contraseña</label>
@@ -212,10 +206,10 @@
             </div>
         </div>
     </div>
-    
+
     <div class="modal fade" id="modalRegistro" aria-hidden="true" aria-labelledby="modalRegistroLabel1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content transparent-background text-light">
+            <div class="modal-content gray-background text-light">
                 <div class="modal-header border-transparent">
                     <h5 class="modal-title" id="modalRegistroLabel1">Registro</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -224,7 +218,7 @@
                     <form>
                         <div class="mb-3">
                             <label for="registroNombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="registroNombre" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="registroNombre" aria-describedby="namelHelp">
                         </div>
                         <div class="mb-3">
                             <label for="registroEmail" class="form-label">Correo</label>
@@ -237,13 +231,14 @@
                         <button type="submit" class="btn btn-purple">Registrarse</button>
                     </form>
                 </div>
-                    <div>
+                <div>
                     <div class="form-text text-center mb-1 text-light">Ya eres miembro?</div>
                 </div>
                 <button class="btn btn-outline-purple" id="inicioSesion">Inicio de Sesion</button>
             </div>
         </div>
-    </div>    
+    </div>
+
     
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -251,6 +246,7 @@
     </script>
     <script src="../js/app.js"></script>
     <script src="../js/nav.js" type="module"></script>
+    <script src="../js/reproductor.js"></script>
 </body>
 
 </html>
