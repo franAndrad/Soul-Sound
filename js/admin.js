@@ -1,5 +1,6 @@
 import { Cancion } from "./cancionClass.js";
 import { generarCodigo } from "./codigoUnico.js";
+import { campoRequerido, validacionTiempo, validacionURL } from "./validaciones.js";
 
 let nuevaCancion = new Cancion();
 console.log(nuevaCancion);
@@ -22,6 +23,12 @@ let cancionExistente = false;
 let listaCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
 
 //validaciones
+autor.addEventListener("blur", ()=>{campoRequerido(autor)});
+titulo.addEventListener("blur", ()=>{campoRequerido(titulo)});
+cancion.addEventListener("blur", ()=>{campoRequerido(cancion); validacionURL(cancion)});
+portada.addEventListener("blur", ()=>{campoRequerido(portada); validacionURL(portada)});
+duracion.addEventListener("blur", ()=>{campoRequerido(duracion); validacionTiempo(duracion)});
+genero.addEventListener("blur", ()=>{campoRequerido(genero)});
 
 formulario.addEventListener('submit', guardarCancion);
 btnCrearCancion.addEventListener('click', ()=>{
@@ -43,14 +50,18 @@ function guardarCancion(e){
 }
 
 function crearCancion(e){
-    let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value.toLowerCase(), album.value, cancion.value, portada.value, duracion.value, genero.value);
-    console.log(nuevaCancion);
-    listaCanciones.push(nuevaCancion);
-    guardarListaCanciones();
-    limpiarFormulario();
-    modalAdminCancion.hide();
 
-    crearFila(nuevaCancion);
+    if (campoRequerido(autor) && campoRequerido(titulo) && campoRequerido(cancion) && validacionURL(cancion) && campoRequerido(portada) && validacionURL(portada) && campoRequerido(duracion) && validacionTiempo(duracion) && campoRequerido(genero)) {
+        let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value.toLowerCase(), album.value, cancion.value, portada.value, duracion.value, genero.value);
+        console.log(nuevaCancion);
+        listaCanciones.push(nuevaCancion);
+        guardarListaCanciones();
+        limpiarFormulario();
+        modalAdminCancion.hide();
+    
+        crearFila(nuevaCancion);
+    }
+
 }
 
 function limpiarFormulario(){
