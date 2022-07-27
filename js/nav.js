@@ -23,9 +23,6 @@ let registroEmail = document.getElementById("registroEmail");
 let registroPassword = document.getElementById("registroPassword");
 let registroCodigo = document.getElementById('registroCodigo')
 
-
-
-
 const modalSesion = new bootstrap.Modal(document.querySelector('#modalSesion'));
 const modalRegistro = new bootstrap.Modal(document.querySelector('#modalRegistro'));
 
@@ -35,7 +32,7 @@ botonInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonRegistro.addEventListener('click',()=>{abrirRegistro()});
 window.addEventListener('resize', ()=>{actualizarPagina()});
 // input.addEventListener('focus',()=>{filtrar();});
-input.addEventListener('keyup',()=>{filtrar();});
+input.addEventListener('keyup',(e)=>{filtrar(e);});
 input.addEventListener('keydown',(e)=>{filtrar(e);});
 // Validaciones
 loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
@@ -49,8 +46,9 @@ formularioLogin.addEventListener("submit", login);
 
 // si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
 let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
-let listaCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
+let listCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
 
+console.log('hola');
 
 // Funcionalidad del registro
 function crearUsuario(e){
@@ -73,7 +71,6 @@ function crearUsuario(e){
         timer: 1000
         
     })
-    
 }
 
 // limpiar el formulario
@@ -157,7 +154,7 @@ function filtrar(e){
     // para cada objeto buscamos simulitudes con el input
     
     // cuenta de listaSeries poner la cancion
-    listaCanciones.forEach((cancion)=>{
+    listCanciones.forEach((cancion)=>{
         posicionBuscada = cancion.titulo.search(input.value.toLowerCase());
         if(posicionBuscada !== -1 && cont<8 && input.value!=''){
             // buscados.push(cancion);
@@ -169,7 +166,10 @@ function filtrar(e){
         }
     });
     
-    if(e.key  === "Enter"){
+    if(e.key  === 'Enter'){
+        if (e.defaultPrevented) {
+            return;
+        }
         buscar(input.value.toLowerCase());
     }
     
@@ -180,6 +180,7 @@ function filtrar(e){
 }
 
 function buscar(cancion){
+    // window.location.href = window.location.origin + `/index.html`;
     let posicionBuscada;
 
     // hacemos que aparesca vacia la lista
@@ -189,7 +190,7 @@ function buscar(cancion){
     listadoCanciones.innerHTML = '';
     
     // para cada objeto buscamos simulitudes con el input y colocamos la card creada
-    listaCanciones.forEach((canciones)=>{
+    listCanciones.forEach((canciones)=>{
         posicionBuscada = canciones.titulo.search(cancion);
         if(posicionBuscada !== -1 && input.value!=''){
             // buscados.push(cancion);
