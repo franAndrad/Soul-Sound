@@ -41,7 +41,7 @@
     </nav>
 </header>
     <main>
-      <section>
+      <section class="container-fluid">
         <div class="mt-4 ms-5">
           <img class="imgError" src="https://fontmeme.com/permalink/220726/20d130fae1be0b8347a476086705d5cc.png" alt="">
           <br>
@@ -67,64 +67,68 @@
   </footer>
   
   <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
-<div class="modal fade" id="modalSesion" aria-hidden="true" aria-labelledby="modalSesionLabel1" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content text-light gray-background">
-          <div class="modal-header border-transparent" >
-              <h5 class="modal-title" id="modalSesionLabel">Inicio de Sesion</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form>
-                  <div class="mb-3">
-                      <label for="LoginEmail" class="form-label">Correo</label>
-                      <input type="email" class="form-control" id="LoginEmail" aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-3">
-                      <label for="loginPassword" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="loginPassword">
-                  </div>
-                  <button type="submit" class="btn btn-purple">Iniciar Sesion</button>
-              </form>
-          </div>
-          <div>
-              <div class="form-text text-center mb-1 text-light">No eres un usuario?</div>
-          </div>
-          <button class="btn btn-outline-purple" id="registrarse">Registrarse</button>               
-      </div>
-  </div>
+  <div class="modal fade" id="modalSesion" aria-hidden="true" aria-labelledby="modalSesionLabel1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-light gray-background">
+            <div class="modal-header border-transparent" >
+                <h5 class="modal-title" id="modalSesionLabel">Inicio de Sesion</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formLogin">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="loginPassword">
+                    </div>
+                    <button type="submit" class="btn btn-purple">Iniciar Sesion</button>
+                </form>
+            </div>
+            <div>
+                <div class="form-text text-center mb-1 text-light">No eres un usuario?</div>
+            </div>
+            <button class="btn btn-outline-purple" id="registrarse">Registrarse</button>               
+        </div>
+    </div>
 </div>
 
 <div class="modal fade" id="modalRegistro" aria-hidden="true" aria-labelledby="modalRegistroLabel1" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content gray-background text-light">
-          <div class="modal-header border-transparent">
-              <h5 class="modal-title" id="modalRegistroLabel1">Registro</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form>
-                  <div class="mb-3">
-                      <label for="registroNombre" class="form-label">Nombre</label>
-                      <input type="text" class="form-control" id="registroNombre" aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-3">
-                      <label for="registroEmail" class="form-label">Correo</label>
-                      <input type="email" class="form-control" id="registroEmail" aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-3">
-                      <label for="registroPassword" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="registroPassword">
-                  </div>
-                  <button type="submit" class="btn btn-purple">Registrarse</button>
-              </form>
-          </div>
-          <div>
-              <div class="form-text text-center mb-1 text-light">Ya eres miembro?</div>
-          </div>
-          <button class="btn btn-outline-purple" id="inicioSesion">Inicio de Sesion</button>
-      </div>
-  </div>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content gray-background text-light">
+            <div class="modal-header border-transparent">
+                <h5 class="modal-title" id="modalRegistroLabel1">Registro</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formUsuario">
+                    <div class="mb-3">
+                        <label for="registroCodigo" class="form-label">Codigo</label>
+                        <input type="text" class="form-control" id="registroCodigo" aria-describedby="namelHelp" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registroNombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="registroNombre" aria-describedby="namelHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="registroEmail" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="registroEmail" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="registroPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="registroPassword">
+                    </div>
+                    <button type="submit" class="btn btn-purple">Registrarse</button>
+                </form>
+            </div>
+            <div>
+                <div class="form-text text-center mb-1 text-light">Ya eres miembro?</div>
+            </div>
+            <button class="btn btn-outline-purple" id="inicioSesion">Inicio de Sesion</button>
+        </div>
+    </div>
 </div>
   
     <!-- JavaScript Bundle with Popper -->
