@@ -299,6 +299,11 @@ button{
     .textoNosotros{
         width: 100%;
     }
+    #encontrados{
+        position: absolute;
+        z-index: 0;
+        top: 100px;
+    }
 }
 @media all and (max-width:700px){
     .nav-search{
@@ -309,6 +314,7 @@ button{
         z-index: 1;
     }
     #encontrados{
+        position: absolute;
         width: 275px;
         z-index: 0;
         top: 100px;
@@ -316,7 +322,6 @@ button{
 
 }
 
-    
 /* pagina de detalle */ 
 
 #tarjetaDetalle{
@@ -349,4 +354,4 @@ button{
   text-overflow: ellipsis; 
   max-width: 200px;
   padding: 2px 5px;
-  }
+}
