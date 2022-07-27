@@ -3,7 +3,6 @@ import { generarCodigo } from "./codigoUnico.js";
 import { campoRequerido, validacionTiempo, validacionURL } from "./validaciones.js";
 
 let nuevaCancion = new Cancion();
-console.log(nuevaCancion);
 
 let codigo = document.getElementById('codigo');
 let autor = document.getElementById('autor');
@@ -16,13 +15,11 @@ let genero = document.getElementById('genero');
 let formulario = document.querySelector('#formCancion');
 let btnCrearCancion = document.querySelector('#btnCrearCancion');
 const modalAdminCancion = new bootstrap.Modal(document.getElementById('modalCancion'));
-console.log(modalAdminCancion);
 
 let cancionExistente = false;
 
 let listaCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
 
-//validaciones
 autor.addEventListener("blur", ()=>{campoRequerido(autor)});
 titulo.addEventListener("blur", ()=>{campoRequerido(titulo)});
 cancion.addEventListener("blur", ()=>{campoRequerido(cancion); validacionURL(cancion)});
@@ -53,7 +50,6 @@ function crearCancion(e){
 
     if (campoRequerido(autor) && campoRequerido(titulo) && campoRequerido(cancion) && validacionURL(cancion) && campoRequerido(portada) && validacionURL(portada) && campoRequerido(duracion) && validacionTiempo(duracion) && campoRequerido(genero)) {
         let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value.toLowerCase(), album.value, cancion.value, portada.value, duracion.value, genero.value);
-        console.log(nuevaCancion);
         listaCanciones.push(nuevaCancion);
         guardarListaCanciones();
         limpiarFormulario();
@@ -98,12 +94,8 @@ function crearFila(itemCancion){
 }
 
 
-// funcion para borrar canciones
-
 window.borrarCancion = function (codigo){
     
-    console.log(codigo);
-    // pregunto si quiero borrar al usuario
     Swal.fire({
             title: "Estas seguro de querer eliminar la cancion?",
             text: "No puedes revertir este paso luego de aceptar.",
@@ -115,16 +107,14 @@ window.borrarCancion = function (codigo){
             cancelButtonText: 'Cancelar.'
           }).then((result) => {
             if (result.isConfirmed) {
-                // borrar el usuario de listaCanciones y tambien del localStorage
+
                 let listaCancionesNueva = listaCanciones.filter((cancion)=> {return cancion.codigo != codigo})
                 listaCanciones = listaCancionesNueva
                 guardarListaCanciones();
-                console.log(listaCancionesNueva)
-                console.log(listaCanciones)
-                // borrar la cancion de la tabla
+
                 borrarTablaCancion();
                 cargaInicial();
-                // mostrar el cartel de operacion exitosa
+
               Swal.fire(
                 'Cancion eliminada!',
                 'La cancion fue eliminado exitosamente.',

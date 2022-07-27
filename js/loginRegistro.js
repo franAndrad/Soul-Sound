@@ -1,4 +1,3 @@
-// script del login y registro
 export class Usuario{
     constructor(codigoUsuario, nombre, email, password){
         this.codigoUsuario = codigoUsuario;

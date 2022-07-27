@@ -1,11 +1,5 @@
-// funciones para crear la lista de usuarios en administrador
-// import {guardarListaUsuario} from "./nav.js";
-
-// si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
 let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
 
-
-// funciona para crear la tabla de usuarios
 cargaInicialUsuario();
 
 function cargaInicialUsuario(){
@@ -31,11 +25,7 @@ function crearFilaUsuario(itemUsuario){
     </tr>`
 }
 
-// funcion para borrar los usuarios
-
 window.borrarUsuario = function (codigo){
-    console.log(codigo);
-    // pregunto si quiero borrar al usuario
     Swal.fire({
             title: "Estas seguro de querer eliminar al usuario?",
             text: "No puedes revertir este paso luego de aceptar.",
@@ -47,16 +37,11 @@ window.borrarUsuario = function (codigo){
             cancelButtonText: 'Cancelar.'
           }).then((result) => {
             if (result.isConfirmed) {
-                // borrar el usuario de listaUsario y tambien del localStorage
                 let listaUsuarioNueva = listaUsuario.filter((usuario)=> {return usuario.codigoUsuario != codigo})
                 listaUsuario = listaUsuarioNueva
                 guardarListaUsuario();
-                console.log(listaUsuarioNueva)
-                console.log(listaUsuario)
-                // borrar el usuario de la tabla
                 borrarTablaUsuario();
                 cargaInicialUsuario();
-                // mostrar el cartel de operacion exitosa
               Swal.fire(
                 'Usuario eliminado!',
                 'El usuario fue eliminado exitosamente.',
