@@ -8,13 +8,9 @@
     <meta name="keywords" content="muisca,generos,sonido,calidad">
     <meta name="author" content="Francisco Andrade, Daniela Cardozo, Mauro Nicolas Garcia, Juan Menichetti, German von Scheidt">
     
-    <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/db30d1a3bd.js" crossorigin="anonymous"></script>
-    <!-- CSS only -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/style.css">
     <title>Administrador</title>
@@ -33,8 +29,7 @@
             <div class="container-menu d-xl-block d-none" id="paginas">
                 <ul class="d-flex navbar-menu my-auto mx-auto">
                     <li><a class="navbar-link" href="../index.html">Inicio</a></li>
-                    <li><a class="navbar-link" href="pages/nosotros.html">Acerca de</a></li>
-                    <!-- <li><button class="navbar-link" id="nav-inicioSesion">Iniciar Sesion</button></li> -->
+                    <li><a class="navbar-link" href="nosotros.html">Acerca de</a></li>
                 </ul>
             </div>
         </nav>
@@ -63,7 +58,6 @@
                           </tr>
                         </thead>
                         <tbody id="listaCanciones">
-                          <!-- lista de canciones con admin.js -->
                         </tbody>
                       </table>
                 </article>
@@ -80,7 +74,6 @@
                           </tr>
                         </thead>
                         <tbody id="listaUsuario">
-                          <!-- lista de los usuarios con nav.js -->
                         </tbody>
                       </table>
                 </article>
@@ -88,7 +81,6 @@
         </section>
     </main> 
 
-    <!-- Modal para Administrar canciones -->
     <div class="modal fade" id="modalCancion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content text-light gray-background">
@@ -146,16 +138,15 @@
                 <div class="ms-lg-0 ms-auto me-auto mt-3 text-center">
                     <p class="text-white">&copy;2022 Epic Sound</p>
                 </div>
-                    <a class="navbar-link" href="#">Politica de Privacidad</a>
-                    <a class="navbar-link" href="#">Terminos y condiciones</a>
-                    <a class="navbar-link" href="#">Contacto</a>
+                    <a class="navbar-link" href="paginaError.html">Politica de Privacidad</a>
+                    <a class="navbar-link" href="paginaError.html">Terminos y condiciones</a>
+                    <a class="navbar-link" href="paginaError.html">Contacto</a>
                 <div>
                 </div>
             </div>
         </div>
     </footer>
-    
-    <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
+
     <div class="modal fade" id="modalSesion" aria-hidden="true" aria-labelledby="modalSesionLabel1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-light gray-background">
@@ -220,7 +211,6 @@
         </div>
     </div>
     
-    <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     
     <script src="../js/admin.js" type="module"></script>
