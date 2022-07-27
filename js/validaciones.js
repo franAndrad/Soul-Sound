@@ -40,3 +40,15 @@ export function validacionURL(input){
         return false;
     }
 }
+
+export function validacionTiempo(input){
+    let patron = /^([0-1]?[0-9]|2[0-9]):([0-5][0-9])(:[0-5][0-9])?$/
+
+    if(patron.test(input.value.trim())) {
+        input.className = "form-control is-valid";
+        return true;
+    }else{
+        input.className = "form-control is-invalid";
+        return false;
+    }
+}
