@@ -79,6 +79,9 @@ button{
     height: 35px;
     z-index: 1;
 }
+.nav-sin-search{
+    width: 400px;
+}
 .nav-search:focus{
     outline: none;
 }
@@ -272,6 +275,9 @@ button{
     .nav-search{
         width: 400px;
     }
+    .nav-sin-search{
+        width: 400px;
+    }
     .container-toggle{
         width: 100%;
         display: flex;
@@ -309,6 +315,9 @@ button{
     .nav-search{
         width: 250px;
         z-index: 1;
+    }
+    .nav-sin-search{
+        width: 250px;
     }
     .nav-search-icon{
         z-index: 1;
