@@ -179,6 +179,7 @@ function filtrar(e){
     }
 }
 
+
 function buscar(cancion){
     // window.location.href = window.location.origin + `/index.html`;
     let posicionBuscada;
