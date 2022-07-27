@@ -75,8 +75,8 @@ function crearFila(itemCancion){
         <td>${itemCancion.autor}</td>
         <td>${itemCancion.titulo}</td>
         <td>${itemCancion.album}</td>
-        <td>${itemCancion.cancion}</td>
-        <td>${itemCancion.portada}</td>
+        <td class="truncate">${itemCancion.cancion}</td>
+        <td class="truncate">${itemCancion.portada}</td>
         <td>${itemCancion.duracion}</td>
         <td>${itemCancion.genero}</td>
         <td>

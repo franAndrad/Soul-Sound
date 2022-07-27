@@ -341,3 +341,12 @@ button{
     align-items: flex-end;
     padding-top: 80px;
 }
+
+/* truncado */
+.truncate {
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  max-width: 200px;
+  padding: 2px 5px;
+  }
