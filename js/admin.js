@@ -43,7 +43,7 @@ function guardarCancion(e){
 }
 
 function crearCancion(e){
-    let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value, album.value, cancion.value, portada.value, duracion.value, genero.value);
+    let nuevaCancion = new Cancion(codigo.value, autor.value, titulo.value.toLowerCase(), album.value, cancion.value, portada.value, duracion.value, genero.value);
     console.log(nuevaCancion);
     listaCanciones.push(nuevaCancion);
     guardarListaCanciones();
@@ -75,8 +75,8 @@ function crearFila(itemCancion){
         <td>${itemCancion.autor}</td>
         <td>${itemCancion.titulo}</td>
         <td>${itemCancion.album}</td>
-        <td>${itemCancion.cancion}</td>
-        <td>${itemCancion.portada}</td>
+        <td class="truncate">${itemCancion.cancion}</td>
+        <td class="truncate">${itemCancion.portada}</td>
         <td>${itemCancion.duracion}</td>
         <td>${itemCancion.genero}</td>
         <td>
