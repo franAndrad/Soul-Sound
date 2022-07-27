@@ -16,7 +16,6 @@ export function generarCodigo() {
             }
             id = "";
         }
-        console.log(arreglo);
         return arreglo[0];
     }
     
