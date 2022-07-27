@@ -79,6 +79,9 @@ button{
     height: 35px;
     z-index: 1;
 }
+.nav-sin-search{
+    width: 400px;
+}
 .nav-search:focus{
     outline: none;
 }
@@ -272,6 +275,9 @@ button{
     .nav-search{
         width: 400px;
     }
+    .nav-sin-search{
+        width: 400px;
+    }
     .container-toggle{
         width: 100%;
         display: flex;
@@ -299,16 +305,25 @@ button{
     .textoNosotros{
         width: 100%;
     }
+    #encontrados{
+        position: absolute;
+        z-index: 0;
+        top: 100px;
+    }
 }
 @media all and (max-width:700px){
     .nav-search{
         width: 250px;
         z-index: 1;
     }
+    .nav-sin-search{
+        width: 250px;
+    }
     .nav-search-icon{
         z-index: 1;
     }
     #encontrados{
+        position: absolute;
         width: 275px;
         z-index: 0;
         top: 100px;
@@ -316,7 +331,6 @@ button{
 
 }
 
-    
 /* pagina de detalle */ 
 
 #tarjetaDetalle{
@@ -349,4 +363,4 @@ button{
   text-overflow: ellipsis; 
   max-width: 200px;
   padding: 2px 5px;
-  }
+}

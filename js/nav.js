@@ -21,7 +21,17 @@ let loginPassword = document.getElementById("loginPassword");
 let registroNombre = document.getElementById("registroNombre");
 let registroEmail = document.getElementById("registroEmail");
 let registroPassword = document.getElementById("registroPassword");
-let registroCodigo = document.getElementById('registroCodigo')
+let registroCodigo = document.getElementById('registroCodigo');
+
+// const parametro = window.location.search;
+// // buscar con ese parametro la serie en cuestion
+// const urlParams = new URLSearchParams(parametro);
+// console.log(urlParams.get('cancion'));
+
+// if(urlParams.get('cancion')!==null && urlParams.get('cancion')!==''){
+//     input.value = urlParams.get('cancion');
+//     buscar(input.value);
+// }
 
 const modalSesion = new bootstrap.Modal(document.querySelector('#modalSesion'));
 const modalRegistro = new bootstrap.Modal(document.querySelector('#modalRegistro'));
@@ -34,6 +44,7 @@ window.addEventListener('resize', ()=>{actualizarPagina()});
 // input.addEventListener('focus',()=>{filtrar();});
 input.addEventListener('keyup',(e)=>{filtrar(e);});
 input.addEventListener('keydown',(e)=>{filtrar(e);});
+
 // Validaciones
 loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
 loginPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,loginPassword)});
@@ -43,12 +54,11 @@ registroPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,registroP
 formularioRegistro.addEventListener("submit", crearUsuario);
 formularioLogin.addEventListener("submit", login);
 
+console.log("hola")
 
 // si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
 let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
 let listCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
-
-console.log('hola');
 
 // Funcionalidad del registro
 function crearUsuario(e){
@@ -174,13 +184,14 @@ function filtrar(e){
     }
     
     window.ponerValue = (nombreCancion) =>{
+        // window.location.href = window.location.origin + `/index.html?cancion=${(nombreCancion)}`;
         input.value = nombreCancion;
         buscar(nombreCancion);
     }
 }
 
 function buscar(cancion){
-    // window.location.href = window.location.origin + `/index.html`;
+    // input.value = urlParams.get('cancion')
     let posicionBuscada;
 
     // hacemos que aparesca vacia la lista

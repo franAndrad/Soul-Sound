@@ -27,10 +27,8 @@
                 <button class="btn fs-3 nav-btn d-xl-none d-block" id="toggle"><i class="fa-solid fa-bars text-white" id="icono"></i></button>
             </div>
             <div class="ps-lg-5 container-search d-xl-flex d-none" id="buscador">
-                <input class="nav-search" type="search" placeholder="Buscá tu cancion favorita" aria-label="Search" required minlength="2" />
-                <button class="nav-search-icon" disabled type="submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+                <div class="nav-sin-search">
+                </div>
             </div>
             <div class="container-menu d-xl-block d-none" id="paginas">
                 <ul class="d-flex navbar-menu my-auto mx-auto">
@@ -57,8 +55,8 @@
                             <th scope="col">Autor</th>
                             <th scope="col">Título</th>
                             <th scope="col">Album</th>
-                            <th scope="col">Canción</th>
-                            <th scope="col">Portada</th>
+                            <th scope="col">Canción <small>(Url)</small></th>
+                            <th scope="col">Portada <small>(Url)</small></th>
                             <th scope="col">Duración</th>
                             <th scope="col">Género</th>
                             <th scope="col">Editar</th>
@@ -117,11 +115,11 @@
                     <input type="text" class="form-control" id="album">
                 </div>
                 <div class="mb-2">
-                    <label for="cancion" class="form-label">Canción</label>
+                    <label for="cancion" class="form-label">Canción <small>(Url)</small></label>
                     <input type="text" class="form-control" id="cancion">
                 </div>
                 <div class="mb-2">
-                    <label for="portada" class="form-label">Portada</label>
+                    <label for="portada" class="form-label">Portada <small>(Url)</small></label>
                     <input type="text" class="form-control" id="portada">
                 </div>
                 <div class="mb-2">
@@ -157,8 +155,8 @@
         </div>
     </footer>
     
-     <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
-     <div class="modal fade" id="modalSesion" aria-hidden="true" aria-labelledby="modalSesionLabel1" tabindex="-1">
+    <!-- Login & Registro Modal (#ModalToggle [LogIn], #ModalToggle2 [Registro])-->
+    <div class="modal fade" id="modalSesion" aria-hidden="true" aria-labelledby="modalSesionLabel1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-light gray-background">
                 <div class="modal-header border-transparent" >
