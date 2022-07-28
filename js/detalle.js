@@ -30,10 +30,10 @@ seccionDetalle.innerHTML = `
             <p class="card-text"><small>${cancionBuscada.genero} <br/> ${cancionBuscada.duracion}</small></p>
 
             <div id="reproductorMusica">
-                <iframe style="border-radius:12px" src="${iframeLink}" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <iframe style="border-radius:12px" src="${iframeLink}" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
         </div>
 
     </div>
 </div>
-`
+`;

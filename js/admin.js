@@ -2,8 +2,6 @@ import { Cancion } from "./cancionClass.js";
 import { generarCodigo } from "./codigoUnico.js";
 import { campoRequerido, validacionTiempo, validacionURL } from "./validaciones.js";
 
-let nuevaCancion = new Cancion();
-
 let codigo = document.getElementById('codigo');
 let autor = document.getElementById('autor');
 let titulo = document.getElementById('titulo');
@@ -15,9 +13,7 @@ let genero = document.getElementById('genero');
 let formulario = document.querySelector('#formCancion');
 let btnCrearCancion = document.querySelector('#btnCrearCancion');
 const modalAdminCancion = new bootstrap.Modal(document.getElementById('modalCancion'));
-
 let cancionExistente = false;
-
 let listaCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
 
 autor.addEventListener("blur", ()=>{campoRequerido(autor)});
@@ -43,7 +39,6 @@ function guardarCancion(e){
     } else {
         crearCancion();
     }
-
 }
 
 function crearCancion(e){
@@ -54,7 +49,6 @@ function crearCancion(e){
         guardarListaCanciones();
         limpiarFormulario();
         modalAdminCancion.hide();
-    
         crearFila(nuevaCancion);
     }
 
@@ -93,14 +87,8 @@ function crearFila(itemCancion){
     </tr>`
 }
 
-
-
-
 window.prepararEdicionCancion = function (codigoP) {
-    
-    // cargar los datos de la serie a editar
     let cancionBuscada = listaCanciones.find((cancion)=>{return cancion.codigo == codigoP});
-    // asignar los valores a cada input
     codigo.value = cancionBuscada.codigo;
     autor.value = cancionBuscada.autor;
     titulo.value = cancionBuscada.titulo;
@@ -111,18 +99,12 @@ window.prepararEdicionCancion = function (codigoP) {
     genero.value = cancionBuscada.genero;
     formulario.value = cancionBuscada.formulario;
     btnCrearCancion.value = cancionBuscada.url;
-    // mostrar formulario de la ventana modal
     modalAdminCancion.show();
-    // aqui modifico la variable existeSerie para poder editar
     cancionExistente = true;
+}
 
-     
-  
-  }
-  function guardarEdicionCancion (){
-    // necesitamos la posicion de la serie dentro del arrglo
+function guardarEdicionCancion (){
     let posicionCancion = listaCanciones.findIndex((itemCancion)=>{return itemCancion.codigo == codigo.value})
-    // modificamos los valores de la serie encontrada
     listaCanciones[posicionCancion].autor = autor.value;
     listaCanciones[posicionCancion].titulo = titulo.value;
     listaCanciones[posicionCancion].album = album.value;
@@ -130,24 +112,16 @@ window.prepararEdicionCancion = function (codigoP) {
     listaCanciones[posicionCancion].portada = portada.value;
     listaCanciones[posicionCancion].duracion = duracion.value;
     listaCanciones[posicionCancion].genero = genero.value;
-  
-    // actualizar el localstorage
     guardarListaCanciones();
-    // actualizar la tabla
     borrarTablaCancion();
     cargaInicial();
-    // indicar al usuario si se pudo realizar la accion
     Swal.fire(
-      'Serie actualizada',
-      'La serie seleccionada fue exitosamente actualizada',
-      'success'
+        'Serie actualizada',
+        'La serie seleccionada fue exitosamente actualizada',
+        'success'
     );
-    // cerrar la ventana modal
     modalAdminCancion.hide();
-  }
-
-
-// funcion para borrar canciones
+}
 
 window.borrarCancion = function (codigo){
     
@@ -160,23 +134,20 @@ window.borrarCancion = function (codigo){
             cancelButtonColor: '#d33',
             confirmButtonText: 'Si, borrar.',
             cancelButtonText: 'Cancelar.'
-          }).then((result) => {
-            if (result.isConfirmed) {
-
+        }).then((result) => {
+        if (result.isConfirmed) {
                 let listaCancionesNueva = listaCanciones.filter((cancion)=> {return cancion.codigo != codigo})
                 listaCanciones = listaCancionesNueva
                 guardarListaCanciones();
-
                 borrarTablaCancion();
                 cargaInicial();
-
-              Swal.fire(
+            Swal.fire(
                 'Cancion eliminada!',
                 'La cancion fue eliminado exitosamente.',
                 'success'
-              )
-            }
-          })
+            )
+        }
+    })
 }
 
 function borrarTablaCancion(){

@@ -8,30 +8,16 @@ let botonNavInicioSesion = document.querySelector("#nav-inicioSesion");
 let botonInicioSesion = document.querySelector("#inicioSesion");
 let botonRegistro = document.querySelector("#registrarse");
 let paginas = document.getElementById('paginas');
-let buscador = document.getElementById('buscador');
 let icono = document.getElementById('icono');
 let header = document.getElementById('header');
 let formularioRegistro = document.getElementById("formUsuario");
 let formularioLogin = document.getElementById("formLogin");
-let listadoCanciones = document.getElementById("listadoCanciones");
-let encontrados = document.getElementById("encontrados");
-let input = document.getElementById("input");
 let loginEmail = document.getElementById("loginEmail");
 let loginPassword = document.getElementById("loginPassword");
 let registroNombre = document.getElementById("registroNombre");
 let registroEmail = document.getElementById("registroEmail");
 let registroPassword = document.getElementById("registroPassword");
 let registroCodigo = document.getElementById('registroCodigo');
-
-// const parametro = window.location.search;
-// // buscar con ese parametro la serie en cuestion
-// const urlParams = new URLSearchParams(parametro);
-// console.log(urlParams.get('cancion'));
-
-// if(urlParams.get('cancion')!==null && urlParams.get('cancion')!==''){
-//     input.value = urlParams.get('cancion');
-//     buscar(input.value);
-// }
 
 const modalSesion = new bootstrap.Modal(document.querySelector('#modalSesion'));
 const modalRegistro = new bootstrap.Modal(document.querySelector('#modalRegistro'));
@@ -41,11 +27,7 @@ botonNavInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonInicioSesion.addEventListener('click',()=>{abrirInicioSesion()});
 botonRegistro.addEventListener('click',()=>{abrirRegistro()});
 window.addEventListener('resize', ()=>{actualizarPagina()});
-// input.addEventListener('focus',()=>{filtrar();});
-input.addEventListener('keyup',(e)=>{filtrar(e);});
-input.addEventListener('keydown',(e)=>{filtrar(e);});
 
-// Validaciones
 loginEmail.addEventListener("blur", ()=>{validarEmail(loginEmail)});
 loginPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,loginPassword)});
 registroNombre.addEventListener("blur", ()=>{cantidadCaracteres(1,30,registroNombre)});
@@ -54,13 +36,8 @@ registroPassword.addEventListener("blur", ()=>{cantidadCaracteres(3,30,registroP
 formularioRegistro.addEventListener("submit", crearUsuario);
 formularioLogin.addEventListener("submit", login);
 
-console.log("hola")
-
-// si hay algo en el localStorage traer esos datos, si no hay nda listaUsuario tiene que ser una []
 let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioKey")) || [];
-let listCanciones = JSON.parse(localStorage.getItem('listaCancionesKey')) || [];
 
-// Funcionalidad del registro
 function crearUsuario(e){
     e.preventDefault();
     console.log('desde la funcion crearUsuario');
@@ -83,18 +60,15 @@ function crearUsuario(e){
     })
 }
 
-// limpiar el formulario
 function limpiarFormulario(){
     formularioRegistro.reset();
     formularioLogin.reset();
 }
 
-// guardamos la lista en el localStorage
 function guardarListaUsuario(){
     localStorage.setItem("listaUsuarioKey", JSON.stringify(listaUsuario));
 }
 
-// funcionalidad del login
 function login(e){
     e.preventDefault();
     if(loginEmail.value === 'administrador@gmail.com' && loginPassword.value === '1234560' ){
@@ -120,7 +94,6 @@ function login(e){
 }
 
 
-// Funcionalidad del navbar responsive
 function actualizarPagina(){
     paginas.className = 'container-menu d-xl-block d-none';
     buscador.className = 'ps-lg-5 container-search d-xl-flex d-none';
@@ -153,76 +126,3 @@ function abrirRegistro(){
     modalSesion.hide();
 }
 
-function filtrar(e){
-    // variables nescesarias 
-    let posicionBuscada;
-    let cont = 0;
-
-    // hacemos que aparesca vacia la lista
-    limpiarBuscador();    
-
-    // para cada objeto buscamos simulitudes con el input
-    
-    // cuenta de listaSeries poner la cancion
-    listCanciones.forEach((cancion)=>{
-        posicionBuscada = cancion.titulo.search(input.value.toLowerCase());
-        if(posicionBuscada !== -1 && cont<8 && input.value!=''){
-            // buscados.push(cancion);
-            encontrados.className = 'ms-0 listaBusqueda bg-light rounded';
-            encontrados.innerHTML += `
-                <li class=' rounded selection'><a class='text-dark text-decoration-none py-2 px-2' onclick="ponerValue('${cancion.titulo}')">${cancion.titulo}<a/></li>
-            `; 
-            cont++;
-        }
-    });
-    
-    if(e.key  === 'Enter'){
-        if (e.defaultPrevented) {
-            return;
-        }
-        buscar(input.value.toLowerCase());
-    }
-    
-    window.ponerValue = (nombreCancion) =>{
-        // window.location.href = window.location.origin + `/index.html?cancion=${(nombreCancion)}`;
-        input.value = nombreCancion;
-        buscar(nombreCancion);
-    }
-}
-
-function buscar(cancion){
-    // input.value = urlParams.get('cancion')
-    let posicionBuscada;
-
-    // hacemos que aparesca vacia la lista
-    limpiarBuscador();
-    
-    // limpiamos cards
-    listadoCanciones.innerHTML = '';
-    
-    // para cada objeto buscamos simulitudes con el input y colocamos la card creada
-    listCanciones.forEach((canciones)=>{
-        posicionBuscada = canciones.titulo.search(cancion);
-        if(posicionBuscada !== -1 && input.value!=''){
-            // buscados.push(cancion);
-            listadoCanciones.className = 'row justify-content-center';
-            listadoCanciones.innerHTML += `
-            <div class="card col-6 col-md-3 col-lg-2 bg-dark m-2">
-                <a href="#">
-                    <img src="img/CancionEjemplo.jpg" class="card-img-top mt-3" alt="portada de ejemplo">
-                </a>
-                <div class="card-body">
-                    <h5 class="card-title text-light">${canciones.autor}</h5>
-                    <p class="card-text text-light">${canciones.titulo}</p>
-                </div>
-            </div>
-            `
-        }
-    });
-}
-
-function limpiarBuscador(){
-    // hacemos que aparesca vacia la lista
-    encontrados.className = 'd-none';
-    encontrados.innerHTML = ``;
-}
