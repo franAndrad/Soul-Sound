@@ -7,16 +7,16 @@ forma de un catálogo de música, también contiene un login, para que solo el a
 # Epic Sound
 ## Proyecto Web de Musica
 ### [ Epic Sound Demo](https://soul-sound.netlify.app/index.html)
-### [Rama Master del Proyecto](https://github.com/franAndrad/Soul-Sound/tree/master)
+### [Repositorio GitHub](https://github.com/franAndrad/Soul-Sound/tree/master)
 
 ### Clonar Repositorio
 
 Run `git clone https://github.com/franAndrad/Soul-Sound.git`.
 
 **Librerias Utilizadas**
-- Bootstrap
-- FontAwesome
-- SweetAlerts
+- Bootstrap 5.2
+- FontAwesome 6.1.2
+- SweetAlerts 2.0
 
 
 
