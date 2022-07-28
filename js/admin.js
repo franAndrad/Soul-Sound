@@ -87,12 +87,67 @@ function crearFila(itemCancion){
         <td>${itemCancion.duracion}</td>
         <td>${itemCancion.genero}</td>
         <td>
-            <button class="btn btn-light m-1 opacity-75"><i class="bi bi-pencil-square"></i></button>
+            <button class="btn btn-light m-1 opacity-75" onclick="prepararEdicionCancion('${itemCancion.codigo}')"><i class="bi bi-pencil-square"></i></button>
             <button class="btn btn-danger m-1 opacity-75" onclick="borrarCancion('${itemCancion.codigo}')"><i class="bi bi-x-square-fill"></i></button>
         </td>
     </tr>`
 }
 
+
+
+
+window.prepararEdicionCancion = function (codigoP) {
+    
+    // cargar los datos de la serie a editar
+    let cancionBuscada = listaCanciones.find((cancion)=>{return cancion.codigo == codigoP});
+    // asignar los valores a cada input
+    codigo.value = cancionBuscada.codigo;
+    autor.value = cancionBuscada.autor;
+    titulo.value = cancionBuscada.titulo;
+    album.value = cancionBuscada.album;
+    cancion.value = cancionBuscada.cancion;
+    portada.value = cancionBuscada.portada;
+    duracion.value = cancionBuscada.duracion;
+    genero.value = cancionBuscada.genero;
+    formulario.value = cancionBuscada.formulario;
+    btnCrearCancion.value = cancionBuscada.url;
+    // mostrar formulario de la ventana modal
+    modalAdminCancion.show();
+    // aqui modifico la variable existeSerie para poder editar
+    cancionExistente = true;
+
+     
+  
+  }
+  function guardarEdicionCancion (){
+    // necesitamos la posicion de la serie dentro del arrglo
+    let posicionCancion = listaCanciones.findIndex((itemCancion)=>{return itemCancion.codigo == codigo.value})
+    // modificamos los valores de la serie encontrada
+    listaCanciones[posicionCancion].autor = autor.value;
+    listaCanciones[posicionCancion].titulo = titulo.value;
+    listaCanciones[posicionCancion].album = album.value;
+    listaCanciones[posicionCancion].cancion = cancion.value;
+    listaCanciones[posicionCancion].portada = portada.value;
+    listaCanciones[posicionCancion].duracion = duracion.value;
+    listaCanciones[posicionCancion].genero = genero.value;
+  
+    // actualizar el localstorage
+    guardarListaCanciones();
+    // actualizar la tabla
+    borrarTablaCancion();
+    cargaInicial();
+    // indicar al usuario si se pudo realizar la accion
+    Swal.fire(
+      'Serie actualizada',
+      'La serie seleccionada fue exitosamente actualizada',
+      'success'
+    );
+    // cerrar la ventana modal
+    modalAdminCancion.hide();
+  }
+
+
+// funcion para borrar canciones
 
 window.borrarCancion = function (codigo){
     
