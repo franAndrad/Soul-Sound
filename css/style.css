@@ -31,7 +31,6 @@ button{
     margin-bottom: 150px;
 }
 
-/* Backgorund */
 .bodyIndex{
     background-image: url("../img/background");
     width: 100%;
@@ -62,7 +61,6 @@ button{
     color: white;
 }
 
-/* Buscador del navbar */
 .nav-search{
     background: white;
     color: black;
@@ -153,7 +151,7 @@ button{
     margin-left: auto ;
     width: 425px;
 }
-/* Inicio Session*/
+
 .card{
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
     transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
@@ -170,8 +168,6 @@ button{
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.437), rgb(0, 0, 0));
 }
 
-
-/* Pagina Nosotros */
 .fotoNosotros {
     width: 125px;
     height: 125px;
@@ -184,14 +180,10 @@ button{
     margin-top: 25px;
 }
 
-
-/* Modales */
-/* color gris en el fondo del modal de login y registro */
 .gray-background{
     background: rgba(55, 55, 55, 0.856);
 }
 
-/* Quita la linea blanca del header del modal */
 .border-transparent{
     border: 1px solid rgba(0, 0, 0, 0);
 }
@@ -200,7 +192,6 @@ button{
     color: #896797;
 }
 
-/* Boton de color morado (Normal) */
 .btn-purple{
     --bs-btn-color: #fff;
     --bs-btn-bg: #896797;
@@ -218,7 +209,6 @@ button{
     --bs-btn-disabled-border-color: #896797;
 }
 
-/* Boton de color morado (Outline)*/
 .btn-outline-purple{
     --bs-btn-color: #896797;
     --bs-btn-border-color: #896797;
@@ -235,7 +225,6 @@ button{
     --bs-gradient: none;
 }
 
-/* Tamaños Responsive */
 @media only screen and (max-width:767px){
     .iconosRedes{
         display: none !important;
@@ -331,8 +320,6 @@ button{
 
 }
 
-/* pagina de detalle */ 
-
 #tarjetaDetalle{
     background: linear-gradient(180deg, #291712 0%, #130A08 100%);
     border-radius: 5px;
@@ -356,11 +343,10 @@ button{
     padding-top: 80px;
 }
 
-/* truncado */
 .truncate {
     white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  max-width: 200px;
-  padding: 2px 5px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    max-width: 200px;
+    padding: 2px 5px;
 }
